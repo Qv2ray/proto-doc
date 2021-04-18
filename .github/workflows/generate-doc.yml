@@ -19,6 +19,7 @@ jobs:
           go-version: 1.16
       - run: sudo apt install -y protobuf-compiler
       - run: |
+          export PROTOC_GEN_DOC_PAGE_ROOT="proto-doc"
           git clone https://github.com/Qv2ray/protoc-gen-doc
           cd protoc-gen-doc
           make build
