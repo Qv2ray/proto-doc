@@ -19,13 +19,15 @@ jobs:
           go-version: 1.16
       - run: sudo apt install -y protobuf-compiler
       - run: |
-         make build
-         export PATH=$(pwd):$PATH
-         git clone https://github.com/v2fly/v2ray-core
-         for f in $(find ./v2ray-core/ -name "*.proto"); do mkdir -p ./protos/$(dirname $f) ; cp -v $f ./protos/$f; done
-         cd ./protos/v2ray-core/
-         mkdir docs/
-         protoc --doc_out=docs --doc_opt=html,index.html,source_relative $(find . -name '*.proto')
+          git clone https://github.com/Qv2ray/protoc-gen-doc
+          make build
+          export PATH=$(pwd):$PATH
+          cd ..
+          git clone https://github.com/v2fly/v2ray-core
+          for f in $(find ./v2ray-core/ -name "*.proto"); do mkdir -p ./protos/$(dirname $f) ; cp -v $f ./protos/$f; done
+          cd ./protos/v2ray-core/
+          mkdir docs/
+          protoc --doc_out=docs --doc_opt=html,index.html,source_relative $(find . -name '*.proto')
       - name: GitHub Pages
         uses: crazy-max/ghaction-github-pages@v2.3.0
         with:
