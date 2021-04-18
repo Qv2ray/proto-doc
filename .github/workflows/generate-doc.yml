@@ -35,4 +35,4 @@ jobs:
         with:
           branch: main
           folder: ./protos/v2ray-core/docs/
-          clean: true
+          clean: false
