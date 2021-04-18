@@ -160,6 +160,7 @@
   </head>
 
   <body>
+    
     <h1 id="title">Package <code>v2ray.core.app.dns</code></h1>
     <p>Provided by:</p>
     
@@ -176,9 +177,9 @@
         <div class="field-table">
           <h3>Dependencies</h3>
           
-            <p><a href="/common/net/index.html">common/net</a></p>
+            <p><a href="/proto-doc/common/net/index.html">common/net</a></p>
           
-            <p><a href="/app/router/index.html">app/router</a></p>
+            <p><a href="/proto-doc/app/router/index.html">app/router</a></p>
           
         </div>
       
@@ -245,9 +246,9 @@
               
                 <tr>
                   <td>NameServers</td>
-                  <td><a href="/common/net/index.html#v2ray.core.common.net.Endpoint">v2ray.core.common.net.Endpoint</a></td>
+                  <td><a href="/proto-doc/common/net/index.html#v2ray.core.common.net.Endpoint">v2ray.core.common.net.Endpoint</a></td>
                   <td>repeated</td>
-                  <td><p>Nameservers used by this DNS. Only traditional UDP servers are support at
+                  <td><p><strong>Deprecated.</strong> Nameservers used by this DNS. Only traditional UDP servers are support at
 the moment. A special value &#39;localhost&#39; as a domain address can be set to
 use DNS on local system. </p></td>
                 </tr>
@@ -263,7 +264,7 @@ use DNS on local system. </p></td>
                   <td>Hosts</td>
                   <td><a href="#v2ray.core.app.dns.Config.HostsEntry">Config.HostsEntry</a></td>
                   <td>repeated</td>
-                  <td><p>Static hosts. Domain to IP.
+                  <td><p><strong>Deprecated.</strong> Static hosts. Domain to IP.
 Deprecated. Use static_hosts. </p></td>
                 </tr>
               
@@ -410,7 +411,7 @@ domain. V2Ray will use this domain for IP queries. </p></td>
               
                 <tr>
                   <td>value</td>
-                  <td><a href="/common/net/index.html#v2ray.core.common.net.IPOrDomain">v2ray.core.common.net.IPOrDomain</a></td>
+                  <td><a href="/proto-doc/common/net/index.html#v2ray.core.common.net.IPOrDomain">v2ray.core.common.net.IPOrDomain</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
@@ -435,7 +436,7 @@ domain. V2Ray will use this domain for IP queries. </p></td>
               
                 <tr>
                   <td>address</td>
-                  <td><a href="/common/net/index.html#v2ray.core.common.net.Endpoint">v2ray.core.common.net.Endpoint</a></td>
+                  <td><a href="/proto-doc/common/net/index.html#v2ray.core.common.net.Endpoint">v2ray.core.common.net.Endpoint</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
@@ -463,7 +464,7 @@ domain. V2Ray will use this domain for IP queries. </p></td>
               
                 <tr>
                   <td>geoip</td>
-                  <td><a href="/app/router/index.html#v2ray.core.app.router.GeoIP">v2ray.core.app.router.GeoIP</a></td>
+                  <td><a href="/proto-doc/app/router/index.html#v2ray.core.app.router.GeoIP">v2ray.core.app.router.GeoIP</a></td>
                   <td>repeated</td>
                   <td><p> </p></td>
                 </tr>

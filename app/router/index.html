@@ -160,6 +160,7 @@
   </head>
 
   <body>
+    
     <h1 id="title">Package <code>v2ray.core.app.router</code></h1>
     <p>Provided by:</p>
     
@@ -176,7 +177,7 @@
         <div class="field-table">
           <h3>Dependencies</h3>
           
-            <p><a href="/common/net/index.html">common/net</a></p>
+            <p><a href="/proto-doc/common/net/index.html">common/net</a></p>
           
         </div>
       
@@ -591,7 +592,7 @@
                   <td>cidr</td>
                   <td><a href="#v2ray.core.app.router.CIDR">CIDR</a></td>
                   <td>repeated</td>
-                  <td><p>List of CIDRs for target IP address matching.
+                  <td><p><strong>Deprecated.</strong> List of CIDRs for target IP address matching.
 Deprecated. Use geoip below. </p></td>
                 </tr>
               
@@ -607,29 +608,29 @@ runtime. For customized GeoIPs, please leave country code empty. </p></td>
               
                 <tr>
                   <td>port_range</td>
-                  <td><a href="/common/net/index.html#v2ray.core.common.net.PortRange">v2ray.core.common.net.PortRange</a></td>
+                  <td><a href="/proto-doc/common/net/index.html#v2ray.core.common.net.PortRange">v2ray.core.common.net.PortRange</a></td>
                   <td></td>
-                  <td><p>A range of port [from, to]. If the destination port is in this range, this
+                  <td><p><strong>Deprecated.</strong> A range of port [from, to]. If the destination port is in this range, this
 rule takes effect. Deprecated. Use port_list. </p></td>
                 </tr>
               
                 <tr>
                   <td>port_list</td>
-                  <td><a href="/common/net/index.html#v2ray.core.common.net.PortList">v2ray.core.common.net.PortList</a></td>
+                  <td><a href="/proto-doc/common/net/index.html#v2ray.core.common.net.PortList">v2ray.core.common.net.PortList</a></td>
                   <td></td>
                   <td><p>List of ports. </p></td>
                 </tr>
               
                 <tr>
                   <td>network_list</td>
-                  <td><a href="/common/net/index.html#v2ray.core.common.net.NetworkList">v2ray.core.common.net.NetworkList</a></td>
+                  <td><a href="/proto-doc/common/net/index.html#v2ray.core.common.net.NetworkList">v2ray.core.common.net.NetworkList</a></td>
                   <td></td>
-                  <td><p>List of networks. Deprecated. Use networks. </p></td>
+                  <td><p><strong>Deprecated.</strong> List of networks. Deprecated. Use networks. </p></td>
                 </tr>
               
                 <tr>
                   <td>networks</td>
-                  <td><a href="/common/net/index.html#v2ray.core.common.net.Network">v2ray.core.common.net.Network</a></td>
+                  <td><a href="/proto-doc/common/net/index.html#v2ray.core.common.net.Network">v2ray.core.common.net.Network</a></td>
                   <td>repeated</td>
                   <td><p>List of networks for matching. </p></td>
                 </tr>
@@ -638,7 +639,7 @@ rule takes effect. Deprecated. Use port_list. </p></td>
                   <td>source_cidr</td>
                   <td><a href="#v2ray.core.app.router.CIDR">CIDR</a></td>
                   <td>repeated</td>
-                  <td><p>List of CIDRs for source IP address matching. </p></td>
+                  <td><p><strong>Deprecated.</strong> List of CIDRs for source IP address matching. </p></td>
                 </tr>
               
                 <tr>
@@ -651,7 +652,7 @@ source_cidr above will have no effect. </p></td>
               
                 <tr>
                   <td>source_port_list</td>
-                  <td><a href="/common/net/index.html#v2ray.core.common.net.PortList">v2ray.core.common.net.PortList</a></td>
+                  <td><a href="/proto-doc/common/net/index.html#v2ray.core.common.net.PortList">v2ray.core.common.net.PortList</a></td>
                   <td></td>
                   <td><p>List of ports for source port matching. </p></td>
                 </tr>
