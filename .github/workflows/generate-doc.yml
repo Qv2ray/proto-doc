@@ -1,9 +1,7 @@
-# This is a basic workflow to help you get started with Actions
-
-name: CI
+name: Generate Documentations
 on:
   push:
-    branches: [ ci ]
+    branches: [ source ]
   schedule:
     - cron: 0 0 */2 * *
   workflow_dispatch:
@@ -18,7 +16,8 @@ jobs:
         with:
           go-version: 1.16
       - run: sudo apt install -y protobuf-compiler
-      - run: |
+      - name: Generate
+        run: |
           export PROTOC_GEN_DOC_PAGE_ROOT="proto-doc"
           git clone https://github.com/Qv2ray/protoc-gen-doc
           cd protoc-gen-doc
