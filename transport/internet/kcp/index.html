@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>V2Ray proto documentations</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Ubuntu:400,700,400italic"/>
+    <style>
+      body {
+        width: 60em;
+        margin: 1em auto;
+        color: #222;
+        font-family: "Ubuntu", sans-serif;
+        padding-bottom: 4em;
+      }
+
+      h1 {
+        font-weight: normal;
+        border-bottom: 1px solid #aaa; 
+      }
+
+      h2 {
+        border-bottom: 1px solid #aaa; 
+        margin: 1.5em 0;
+        margin-bottom: 0.5em;
+      }
+
+      h3 {
+        font-weight: normal;
+        border-bottom: 1px solid #aaa; 
+      }
+
+      a {
+        text-decoration: none;
+        color: #567e25;
+      }
+
+      table {
+        width: 100%;
+        font-size: 80%;
+        border-collapse: collapse;
+      }
+
+      thead {
+        font-weight: 700;
+        background-color: #dcdcdc;
+      }
+
+      tbody tr:nth-child(even) {
+        background-color: #fbfbfb;
+      }
+
+      td {
+        border: 1px solid #ccc;
+        padding: 0.5ex 2ex;
+      }
+
+      td p {
+        text-indent: 1em;
+        margin: 0;
+      }
+
+      td p:nth-child(1) {
+        text-indent: 0;  
+      }
+
+       
+      .field-table td:nth-child(1) {  
+        width: 10em;
+      }
+      .field-table td:nth-child(2) {  
+        width: 10em;
+      }
+      .field-table td:nth-child(3) {  
+        width: 6em;
+      }
+      .field-table td:nth-child(4) {  
+        width: auto;
+      }
+
+       
+      .extension-table td:nth-child(1) {  
+        width: 10em;
+      }
+      .extension-table td:nth-child(2) {  
+        width: 10em;
+      }
+      .extension-table td:nth-child(3) {  
+        width: 10em;
+      }
+      .extension-table td:nth-child(4) {  
+        width: 5em;
+      }
+      .extension-table td:nth-child(5) {  
+        width: auto;
+      }
+
+       
+      .enum-table td:nth-child(1) {  
+        width: 10em;
+      }
+      .enum-table td:nth-child(2) {  
+        width: 10em;
+      }
+      .enum-table td:nth-child(3) {  
+        width: auto;
+      }
+
+       
+      .scalar-value-types-table tr {
+        height: 3em;
+      }
+
+       
+      #toc-container ul {
+        list-style-type: none;
+        padding-left: 1em;
+        line-height: 180%;
+        margin: 0;
+      }
+      #toc > li > a {
+        font-weight: bold;
+      }
+
+       
+      .file-heading {
+        width: 100%;
+        display: table;
+        border-bottom: 1px solid #aaa;
+        margin: 4em 0 1.5em 0;
+      }
+      .file-heading h2 {
+        border: none;
+        display: table-cell;
+      }
+      .file-heading a {
+        text-align: right;
+        display: table-cell;
+      }
+
+       
+      .badge {
+        width: 1.6em;
+        height: 1.6em;
+        display: inline-block;
+
+        line-height: 1.6em;
+        text-align: center;
+        font-weight: bold;
+        font-size: 60%;
+
+        color: #89ba48;
+        background-color: #dff0c8;
+
+        margin: 0.5ex 1em 0.5ex -1em;
+        border: 1px solid #fbfbfb;
+        border-radius: 1ex;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1 id="title">Package <code>v2ray.core.transport.internet.kcp</code></h1>
+    <p>Provided by:</p>
+    
+      <ul id="toc">
+        <li><a href="#file_transport%2finternet%2fkcp%2fconfig.proto">transport/internet/kcp/config.proto</a></li>
+      </ul>
+    
+    
+      <div class="file-heading">
+        <h2 id="file_transport/internet/kcp/config.proto">transport/internet/kcp/config.proto</h2><a href="#title">Top</a>
+      </div>
+
+      
+        <div class="field-table">
+          <h3>Dependencies</h3>
+          
+            <p><a href="/common/serial/index.html">common/serial</a></p>
+          
+        </div>
+      
+
+      <div id="toc-container">
+        <h3>Contents</h3>
+        <ul id="toc">
+          
+          <li>  
+              
+                <li>
+                  <a href="#v2ray.core.transport.internet.kcp.Config"><span class="badge">M</span>Config</a>
+                </li>
+              
+                <li>
+                  <a href="#v2ray.core.transport.internet.kcp.ConnectionReuse"><span class="badge">M</span>ConnectionReuse</a>
+                </li>
+              
+                <li>
+                  <a href="#v2ray.core.transport.internet.kcp.DownlinkCapacity"><span class="badge">M</span>DownlinkCapacity</a>
+                </li>
+              
+                <li>
+                  <a href="#v2ray.core.transport.internet.kcp.EncryptionSeed"><span class="badge">M</span>EncryptionSeed</a>
+                </li>
+              
+                <li>
+                  <a href="#v2ray.core.transport.internet.kcp.MTU"><span class="badge">M</span>MTU</a>
+                </li>
+              
+                <li>
+                  <a href="#v2ray.core.transport.internet.kcp.ReadBuffer"><span class="badge">M</span>ReadBuffer</a>
+                </li>
+              
+                <li>
+                  <a href="#v2ray.core.transport.internet.kcp.TTI"><span class="badge">M</span>TTI</a>
+                </li>
+              
+                <li>
+                  <a href="#v2ray.core.transport.internet.kcp.UplinkCapacity"><span class="badge">M</span>UplinkCapacity</a>
+                </li>
+              
+                <li>
+                  <a href="#v2ray.core.transport.internet.kcp.WriteBuffer"><span class="badge">M</span>WriteBuffer</a>
+                </li>
+              
+              
+              
+               
+          </li> 
+        </ul>
+      </div>
+
+      
+      <p></p>
+
+      
+      
+        <h3 id="v2ray.core.transport.internet.kcp.Config">Config</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>mtu</td>
+                  <td><a href="#v2ray.core.transport.internet.kcp.MTU">MTU</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>tti</td>
+                  <td><a href="#v2ray.core.transport.internet.kcp.TTI">TTI</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>uplink_capacity</td>
+                  <td><a href="#v2ray.core.transport.internet.kcp.UplinkCapacity">UplinkCapacity</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>downlink_capacity</td>
+                  <td><a href="#v2ray.core.transport.internet.kcp.DownlinkCapacity">DownlinkCapacity</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>congestion</td>
+                  <td><a href="#bool">bool</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>write_buffer</td>
+                  <td><a href="#v2ray.core.transport.internet.kcp.WriteBuffer">WriteBuffer</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>read_buffer</td>
+                  <td><a href="#v2ray.core.transport.internet.kcp.ReadBuffer">ReadBuffer</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>header_config</td>
+                  <td><a href="/common/serial/index.html#v2ray.core.common.serial.TypedMessage">v2ray.core.common.serial.TypedMessage</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>seed</td>
+                  <td><a href="#v2ray.core.transport.internet.kcp.EncryptionSeed">EncryptionSeed</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+      
+        <h3 id="v2ray.core.transport.internet.kcp.ConnectionReuse">ConnectionReuse</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>enable</td>
+                  <td><a href="#bool">bool</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+      
+        <h3 id="v2ray.core.transport.internet.kcp.DownlinkCapacity">DownlinkCapacity</h3>
+        <p>Downlink capacity, in MB.</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>value</td>
+                  <td><a href="#uint32">uint32</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+      
+        <h3 id="v2ray.core.transport.internet.kcp.EncryptionSeed">EncryptionSeed</h3>
+        <p>Maximum Transmission Unit, in bytes.</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>seed</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+      
+        <h3 id="v2ray.core.transport.internet.kcp.MTU">MTU</h3>
+        <p>Maximum Transmission Unit, in bytes.</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>value</td>
+                  <td><a href="#uint32">uint32</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+      
+        <h3 id="v2ray.core.transport.internet.kcp.ReadBuffer">ReadBuffer</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>size</td>
+                  <td><a href="#uint32">uint32</a></td>
+                  <td></td>
+                  <td><p>Buffer size in bytes. </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+      
+        <h3 id="v2ray.core.transport.internet.kcp.TTI">TTI</h3>
+        <p>Transmission Time Interview, in milli-sec.</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>value</td>
+                  <td><a href="#uint32">uint32</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+      
+        <h3 id="v2ray.core.transport.internet.kcp.UplinkCapacity">UplinkCapacity</h3>
+        <p>Uplink capacity, in MB.</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>value</td>
+                  <td><a href="#uint32">uint32</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+      
+        <h3 id="v2ray.core.transport.internet.kcp.WriteBuffer">WriteBuffer</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>size</td>
+                  <td><a href="#uint32">uint32</a></td>
+                  <td></td>
+                  <td><p>Buffer size in bytes. </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+
+      
+
+      
+
+      
+    
+  </body>
+</html>
+

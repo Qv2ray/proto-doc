@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>V2Ray proto documentations</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Ubuntu:400,700,400italic"/>
+    <style>
+      body {
+        width: 60em;
+        margin: 1em auto;
+        color: #222;
+        font-family: "Ubuntu", sans-serif;
+        padding-bottom: 4em;
+      }
+
+      h1 {
+        font-weight: normal;
+        border-bottom: 1px solid #aaa; 
+      }
+
+      h2 {
+        border-bottom: 1px solid #aaa; 
+        margin: 1.5em 0;
+        margin-bottom: 0.5em;
+      }
+
+      h3 {
+        font-weight: normal;
+        border-bottom: 1px solid #aaa; 
+      }
+
+      a {
+        text-decoration: none;
+        color: #567e25;
+      }
+
+      table {
+        width: 100%;
+        font-size: 80%;
+        border-collapse: collapse;
+      }
+
+      thead {
+        font-weight: 700;
+        background-color: #dcdcdc;
+      }
+
+      tbody tr:nth-child(even) {
+        background-color: #fbfbfb;
+      }
+
+      td {
+        border: 1px solid #ccc;
+        padding: 0.5ex 2ex;
+      }
+
+      td p {
+        text-indent: 1em;
+        margin: 0;
+      }
+
+      td p:nth-child(1) {
+        text-indent: 0;  
+      }
+
+       
+      .field-table td:nth-child(1) {  
+        width: 10em;
+      }
+      .field-table td:nth-child(2) {  
+        width: 10em;
+      }
+      .field-table td:nth-child(3) {  
+        width: 6em;
+      }
+      .field-table td:nth-child(4) {  
+        width: auto;
+      }
+
+       
+      .extension-table td:nth-child(1) {  
+        width: 10em;
+      }
+      .extension-table td:nth-child(2) {  
+        width: 10em;
+      }
+      .extension-table td:nth-child(3) {  
+        width: 10em;
+      }
+      .extension-table td:nth-child(4) {  
+        width: 5em;
+      }
+      .extension-table td:nth-child(5) {  
+        width: auto;
+      }
+
+       
+      .enum-table td:nth-child(1) {  
+        width: 10em;
+      }
+      .enum-table td:nth-child(2) {  
+        width: 10em;
+      }
+      .enum-table td:nth-child(3) {  
+        width: auto;
+      }
+
+       
+      .scalar-value-types-table tr {
+        height: 3em;
+      }
+
+       
+      #toc-container ul {
+        list-style-type: none;
+        padding-left: 1em;
+        line-height: 180%;
+        margin: 0;
+      }
+      #toc > li > a {
+        font-weight: bold;
+      }
+
+       
+      .file-heading {
+        width: 100%;
+        display: table;
+        border-bottom: 1px solid #aaa;
+        margin: 4em 0 1.5em 0;
+      }
+      .file-heading h2 {
+        border: none;
+        display: table-cell;
+      }
+      .file-heading a {
+        text-align: right;
+        display: table-cell;
+      }
+
+       
+      .badge {
+        width: 1.6em;
+        height: 1.6em;
+        display: inline-block;
+
+        line-height: 1.6em;
+        text-align: center;
+        font-weight: bold;
+        font-size: 60%;
+
+        color: #89ba48;
+        background-color: #dff0c8;
+
+        margin: 0.5ex 1em 0.5ex -1em;
+        border: 1px solid #fbfbfb;
+        border-radius: 1ex;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1 id="title">Package <code>v2ray.core.transport.internet.tls</code></h1>
+    <p>Provided by:</p>
+    
+      <ul id="toc">
+        <li><a href="#file_transport%2finternet%2ftls%2fconfig.proto">transport/internet/tls/config.proto</a></li>
+      </ul>
+    
+    
+      <div class="file-heading">
+        <h2 id="file_transport/internet/tls/config.proto">transport/internet/tls/config.proto</h2><a href="#title">Top</a>
+      </div>
+
+      
+
+      <div id="toc-container">
+        <h3>Contents</h3>
+        <ul id="toc">
+          
+          <li>  
+              
+                <li>
+                  <a href="#v2ray.core.transport.internet.tls.Certificate"><span class="badge">M</span>Certificate</a>
+                </li>
+              
+                <li>
+                  <a href="#v2ray.core.transport.internet.tls.Config"><span class="badge">M</span>Config</a>
+                </li>
+              
+              
+                <li>
+                  <a href="#v2ray.core.transport.internet.tls.Certificate.Usage"><span class="badge">E</span>Certificate.Usage</a>
+                </li>
+              
+              
+               
+          </li> 
+        </ul>
+      </div>
+
+      
+      <p></p>
+
+      
+      
+        <h3 id="v2ray.core.transport.internet.tls.Certificate">Certificate</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>Certificate</td>
+                  <td><a href="#bytes">bytes</a></td>
+                  <td></td>
+                  <td><p>TLS certificate in x509 format. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>Key</td>
+                  <td><a href="#bytes">bytes</a></td>
+                  <td></td>
+                  <td><p>TLS key in x509 format. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>usage</td>
+                  <td><a href="#v2ray.core.transport.internet.tls.Certificate.Usage">Certificate.Usage</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+      
+        <h3 id="v2ray.core.transport.internet.tls.Config">Config</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>allow_insecure</td>
+                  <td><a href="#bool">bool</a></td>
+                  <td></td>
+                  <td><p>Whether or not to allow self-signed certificates. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>certificate</td>
+                  <td><a href="#v2ray.core.transport.internet.tls.Certificate">Certificate</a></td>
+                  <td>repeated</td>
+                  <td><p>List of certificates to be served on server. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>server_name</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>Override server name. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>next_protocol</td>
+                  <td><a href="#string">string</a></td>
+                  <td>repeated</td>
+                  <td><p>Lists of string as ALPN values. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>enable_session_resumption</td>
+                  <td><a href="#bool">bool</a></td>
+                  <td></td>
+                  <td><p>Whether or not to enable session (ticket) resumption. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>disable_system_root</td>
+                  <td><a href="#bool">bool</a></td>
+                  <td></td>
+                  <td><p>If true, root certificates on the system will not be loaded for
+verification. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>pinned_peer_certificate_chain_sha256</td>
+                  <td><a href="#bytes">bytes</a></td>
+                  <td>repeated</td>
+                  <td><p>@Document A pinned certificate chain sha256 hash.
+@Document If the server&#39;s hash does not match this value, the connection will be aborted.
+@Document This value replace allow_insecure.
+@Critical </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+
+      
+        <h3 id="v2ray.core.transport.internet.tls.Certificate.Usage">Certificate.Usage</h3>
+        <p></p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Name</td><td>Number</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td>ENCIPHERMENT</td>
+                <td>0</td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>AUTHORITY_VERIFY</td>
+                <td>1</td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>AUTHORITY_ISSUE</td>
+                <td>2</td>
+                <td><p></p></td>
+              </tr>
+            
+          </tbody>
+        </table>
+      
+
+      
+
+      
+    
+  </body>
+</html>
+

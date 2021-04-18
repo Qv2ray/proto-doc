@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>V2Ray proto documentations</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Ubuntu:400,700,400italic"/>
+    <style>
+      body {
+        width: 60em;
+        margin: 1em auto;
+        color: #222;
+        font-family: "Ubuntu", sans-serif;
+        padding-bottom: 4em;
+      }
+
+      h1 {
+        font-weight: normal;
+        border-bottom: 1px solid #aaa; 
+      }
+
+      h2 {
+        border-bottom: 1px solid #aaa; 
+        margin: 1.5em 0;
+        margin-bottom: 0.5em;
+      }
+
+      h3 {
+        font-weight: normal;
+        border-bottom: 1px solid #aaa; 
+      }
+
+      a {
+        text-decoration: none;
+        color: #567e25;
+      }
+
+      table {
+        width: 100%;
+        font-size: 80%;
+        border-collapse: collapse;
+      }
+
+      thead {
+        font-weight: 700;
+        background-color: #dcdcdc;
+      }
+
+      tbody tr:nth-child(even) {
+        background-color: #fbfbfb;
+      }
+
+      td {
+        border: 1px solid #ccc;
+        padding: 0.5ex 2ex;
+      }
+
+      td p {
+        text-indent: 1em;
+        margin: 0;
+      }
+
+      td p:nth-child(1) {
+        text-indent: 0;  
+      }
+
+       
+      .field-table td:nth-child(1) {  
+        width: 10em;
+      }
+      .field-table td:nth-child(2) {  
+        width: 10em;
+      }
+      .field-table td:nth-child(3) {  
+        width: 6em;
+      }
+      .field-table td:nth-child(4) {  
+        width: auto;
+      }
+
+       
+      .extension-table td:nth-child(1) {  
+        width: 10em;
+      }
+      .extension-table td:nth-child(2) {  
+        width: 10em;
+      }
+      .extension-table td:nth-child(3) {  
+        width: 10em;
+      }
+      .extension-table td:nth-child(4) {  
+        width: 5em;
+      }
+      .extension-table td:nth-child(5) {  
+        width: auto;
+      }
+
+       
+      .enum-table td:nth-child(1) {  
+        width: 10em;
+      }
+      .enum-table td:nth-child(2) {  
+        width: 10em;
+      }
+      .enum-table td:nth-child(3) {  
+        width: auto;
+      }
+
+       
+      .scalar-value-types-table tr {
+        height: 3em;
+      }
+
+       
+      #toc-container ul {
+        list-style-type: none;
+        padding-left: 1em;
+        line-height: 180%;
+        margin: 0;
+      }
+      #toc > li > a {
+        font-weight: bold;
+      }
+
+       
+      .file-heading {
+        width: 100%;
+        display: table;
+        border-bottom: 1px solid #aaa;
+        margin: 4em 0 1.5em 0;
+      }
+      .file-heading h2 {
+        border: none;
+        display: table-cell;
+      }
+      .file-heading a {
+        text-align: right;
+        display: table-cell;
+      }
+
+       
+      .badge {
+        width: 1.6em;
+        height: 1.6em;
+        display: inline-block;
+
+        line-height: 1.6em;
+        text-align: center;
+        font-weight: bold;
+        font-size: 60%;
+
+        color: #89ba48;
+        background-color: #dff0c8;
+
+        margin: 0.5ex 1em 0.5ex -1em;
+        border: 1px solid #fbfbfb;
+        border-radius: 1ex;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1 id="title">Package <code>v2ray.core.app.dns</code></h1>
+    <p>Provided by:</p>
+    
+      <ul id="toc">
+        <li><a href="#file_app%2fdns%2fconfig.proto">app/dns/config.proto</a></li>
+      </ul>
+    
+    
+      <div class="file-heading">
+        <h2 id="file_app/dns/config.proto">app/dns/config.proto</h2><a href="#title">Top</a>
+      </div>
+
+      
+        <div class="field-table">
+          <h3>Dependencies</h3>
+          
+            <p><a href="/common/net/index.html">common/net</a></p>
+          
+            <p><a href="/app/router/index.html">app/router</a></p>
+          
+        </div>
+      
+
+      <div id="toc-container">
+        <h3>Contents</h3>
+        <ul id="toc">
+          
+          <li>  
+              
+                <li>
+                  <a href="#v2ray.core.app.dns.Config"><span class="badge">M</span>Config</a>
+                </li>
+              
+                <li>
+                  <a href="#v2ray.core.app.dns.Config.HostMapping"><span class="badge">M</span>Config.HostMapping</a>
+                </li>
+              
+                <li>
+                  <a href="#v2ray.core.app.dns.Config.HostsEntry"><span class="badge">M</span>Config.HostsEntry</a>
+                </li>
+              
+                <li>
+                  <a href="#v2ray.core.app.dns.NameServer"><span class="badge">M</span>NameServer</a>
+                </li>
+              
+                <li>
+                  <a href="#v2ray.core.app.dns.NameServer.OriginalRule"><span class="badge">M</span>NameServer.OriginalRule</a>
+                </li>
+              
+                <li>
+                  <a href="#v2ray.core.app.dns.NameServer.PriorityDomain"><span class="badge">M</span>NameServer.PriorityDomain</a>
+                </li>
+              
+              
+                <li>
+                  <a href="#v2ray.core.app.dns.DomainMatchingType"><span class="badge">E</span>DomainMatchingType</a>
+                </li>
+              
+                <li>
+                  <a href="#v2ray.core.app.dns.QueryStrategy"><span class="badge">E</span>QueryStrategy</a>
+                </li>
+              
+              
+               
+          </li> 
+        </ul>
+      </div>
+
+      
+      <p></p>
+
+      
+      
+        <h3 id="v2ray.core.app.dns.Config">Config</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>NameServers</td>
+                  <td><a href="/common/net/index.html#v2ray.core.common.net.Endpoint">v2ray.core.common.net.Endpoint</a></td>
+                  <td>repeated</td>
+                  <td><p>Nameservers used by this DNS. Only traditional UDP servers are support at
+the moment. A special value &#39;localhost&#39; as a domain address can be set to
+use DNS on local system. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>name_server</td>
+                  <td><a href="#v2ray.core.app.dns.NameServer">NameServer</a></td>
+                  <td>repeated</td>
+                  <td><p>NameServer list used by this DNS client. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>Hosts</td>
+                  <td><a href="#v2ray.core.app.dns.Config.HostsEntry">Config.HostsEntry</a></td>
+                  <td>repeated</td>
+                  <td><p>Static hosts. Domain to IP.
+Deprecated. Use static_hosts. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>client_ip</td>
+                  <td><a href="#bytes">bytes</a></td>
+                  <td></td>
+                  <td><p>Client IP for EDNS client subnet. Must be 4 bytes (IPv4) or 16 bytes
+(IPv6). </p></td>
+                </tr>
+              
+                <tr>
+                  <td>static_hosts</td>
+                  <td><a href="#v2ray.core.app.dns.Config.HostMapping">Config.HostMapping</a></td>
+                  <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>tag</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>Tag is the inbound tag of DNS client. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>disableCache</td>
+                  <td><a href="#bool">bool</a></td>
+                  <td></td>
+                  <td><p>DisableCache disables DNS cache </p></td>
+                </tr>
+              
+                <tr>
+                  <td>query_strategy</td>
+                  <td><a href="#v2ray.core.app.dns.QueryStrategy">QueryStrategy</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>disableFallback</td>
+                  <td><a href="#bool">bool</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+            
+            
+            <h4>Fields with deprecated option</h4>
+            <table>
+              <thead>
+                <tr>
+                  <td>Name</td>
+                  <td>Option</td>
+                </tr>
+              </thead>
+              <tbody>
+              
+                <tr>
+                  <td>NameServers</td>
+                  <td><p>true</p></td>
+                </tr>
+              
+                <tr>
+                  <td>Hosts</td>
+                  <td><p>true</p></td>
+                </tr>
+              
+              </tbody>
+            </table>
+            
+          
+
+        
+      
+      
+        <h3 id="v2ray.core.app.dns.Config.HostMapping">Config.HostMapping</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>type</td>
+                  <td><a href="#v2ray.core.app.dns.DomainMatchingType">DomainMatchingType</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>domain</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>ip</td>
+                  <td><a href="#bytes">bytes</a></td>
+                  <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>proxied_domain</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>ProxiedDomain indicates the mapped domain has the same IP address on this
+domain. V2Ray will use this domain for IP queries. </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+      
+        <h3 id="v2ray.core.app.dns.Config.HostsEntry">Config.HostsEntry</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>key</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>value</td>
+                  <td><a href="/common/net/index.html#v2ray.core.common.net.IPOrDomain">v2ray.core.common.net.IPOrDomain</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+      
+        <h3 id="v2ray.core.app.dns.NameServer">NameServer</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>address</td>
+                  <td><a href="/common/net/index.html#v2ray.core.common.net.Endpoint">v2ray.core.common.net.Endpoint</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>client_ip</td>
+                  <td><a href="#bytes">bytes</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>skipFallback</td>
+                  <td><a href="#bool">bool</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>prioritized_domain</td>
+                  <td><a href="#v2ray.core.app.dns.NameServer.PriorityDomain">NameServer.PriorityDomain</a></td>
+                  <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>geoip</td>
+                  <td><a href="/app/router/index.html#v2ray.core.app.router.GeoIP">v2ray.core.app.router.GeoIP</a></td>
+                  <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>original_rules</td>
+                  <td><a href="#v2ray.core.app.dns.NameServer.OriginalRule">NameServer.OriginalRule</a></td>
+                  <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+      
+        <h3 id="v2ray.core.app.dns.NameServer.OriginalRule">NameServer.OriginalRule</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>rule</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>size</td>
+                  <td><a href="#uint32">uint32</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+      
+        <h3 id="v2ray.core.app.dns.NameServer.PriorityDomain">NameServer.PriorityDomain</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>type</td>
+                  <td><a href="#v2ray.core.app.dns.DomainMatchingType">DomainMatchingType</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>domain</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+
+      
+        <h3 id="v2ray.core.app.dns.DomainMatchingType">DomainMatchingType</h3>
+        <p></p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Name</td><td>Number</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td>Full</td>
+                <td>0</td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>Subdomain</td>
+                <td>1</td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>Keyword</td>
+                <td>2</td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>Regex</td>
+                <td>3</td>
+                <td><p></p></td>
+              </tr>
+            
+          </tbody>
+        </table>
+      
+        <h3 id="v2ray.core.app.dns.QueryStrategy">QueryStrategy</h3>
+        <p></p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Name</td><td>Number</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td>USE_IP</td>
+                <td>0</td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>USE_IP4</td>
+                <td>1</td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>USE_IP6</td>
+                <td>2</td>
+                <td><p></p></td>
+              </tr>
+            
+          </tbody>
+        </table>
+      
+
+      
+
+      
+    
+  </body>
+</html>
+

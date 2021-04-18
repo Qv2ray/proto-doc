@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>V2Ray proto documentations</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Ubuntu:400,700,400italic"/>
+    <style>
+      body {
+        width: 60em;
+        margin: 1em auto;
+        color: #222;
+        font-family: "Ubuntu", sans-serif;
+        padding-bottom: 4em;
+      }
+
+      h1 {
+        font-weight: normal;
+        border-bottom: 1px solid #aaa; 
+      }
+
+      h2 {
+        border-bottom: 1px solid #aaa; 
+        margin: 1.5em 0;
+        margin-bottom: 0.5em;
+      }
+
+      h3 {
+        font-weight: normal;
+        border-bottom: 1px solid #aaa; 
+      }
+
+      a {
+        text-decoration: none;
+        color: #567e25;
+      }
+
+      table {
+        width: 100%;
+        font-size: 80%;
+        border-collapse: collapse;
+      }
+
+      thead {
+        font-weight: 700;
+        background-color: #dcdcdc;
+      }
+
+      tbody tr:nth-child(even) {
+        background-color: #fbfbfb;
+      }
+
+      td {
+        border: 1px solid #ccc;
+        padding: 0.5ex 2ex;
+      }
+
+      td p {
+        text-indent: 1em;
+        margin: 0;
+      }
+
+      td p:nth-child(1) {
+        text-indent: 0;  
+      }
+
+       
+      .field-table td:nth-child(1) {  
+        width: 10em;
+      }
+      .field-table td:nth-child(2) {  
+        width: 10em;
+      }
+      .field-table td:nth-child(3) {  
+        width: 6em;
+      }
+      .field-table td:nth-child(4) {  
+        width: auto;
+      }
+
+       
+      .extension-table td:nth-child(1) {  
+        width: 10em;
+      }
+      .extension-table td:nth-child(2) {  
+        width: 10em;
+      }
+      .extension-table td:nth-child(3) {  
+        width: 10em;
+      }
+      .extension-table td:nth-child(4) {  
+        width: 5em;
+      }
+      .extension-table td:nth-child(5) {  
+        width: auto;
+      }
+
+       
+      .enum-table td:nth-child(1) {  
+        width: 10em;
+      }
+      .enum-table td:nth-child(2) {  
+        width: 10em;
+      }
+      .enum-table td:nth-child(3) {  
+        width: auto;
+      }
+
+       
+      .scalar-value-types-table tr {
+        height: 3em;
+      }
+
+       
+      #toc-container ul {
+        list-style-type: none;
+        padding-left: 1em;
+        line-height: 180%;
+        margin: 0;
+      }
+      #toc > li > a {
+        font-weight: bold;
+      }
+
+       
+      .file-heading {
+        width: 100%;
+        display: table;
+        border-bottom: 1px solid #aaa;
+        margin: 4em 0 1.5em 0;
+      }
+      .file-heading h2 {
+        border: none;
+        display: table-cell;
+      }
+      .file-heading a {
+        text-align: right;
+        display: table-cell;
+      }
+
+       
+      .badge {
+        width: 1.6em;
+        height: 1.6em;
+        display: inline-block;
+
+        line-height: 1.6em;
+        text-align: center;
+        font-weight: bold;
+        font-size: 60%;
+
+        color: #89ba48;
+        background-color: #dff0c8;
+
+        margin: 0.5ex 1em 0.5ex -1em;
+        border: 1px solid #fbfbfb;
+        border-radius: 1ex;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1 id="title">Package <code>v2ray.core.transport.internet.headers.http</code></h1>
+    <p>Provided by:</p>
+    
+      <ul id="toc">
+        <li><a href="#file_transport%2finternet%2fheaders%2fhttp%2fconfig.proto">transport/internet/headers/http/config.proto</a></li>
+      </ul>
+    
+    
+      <div class="file-heading">
+        <h2 id="file_transport/internet/headers/http/config.proto">transport/internet/headers/http/config.proto</h2><a href="#title">Top</a>
+      </div>
+
+      
+
+      <div id="toc-container">
+        <h3>Contents</h3>
+        <ul id="toc">
+          
+          <li>  
+              
+                <li>
+                  <a href="#v2ray.core.transport.internet.headers.http.Config"><span class="badge">M</span>Config</a>
+                </li>
+              
+                <li>
+                  <a href="#v2ray.core.transport.internet.headers.http.Header"><span class="badge">M</span>Header</a>
+                </li>
+              
+                <li>
+                  <a href="#v2ray.core.transport.internet.headers.http.Method"><span class="badge">M</span>Method</a>
+                </li>
+              
+                <li>
+                  <a href="#v2ray.core.transport.internet.headers.http.RequestConfig"><span class="badge">M</span>RequestConfig</a>
+                </li>
+              
+                <li>
+                  <a href="#v2ray.core.transport.internet.headers.http.ResponseConfig"><span class="badge">M</span>ResponseConfig</a>
+                </li>
+              
+                <li>
+                  <a href="#v2ray.core.transport.internet.headers.http.Status"><span class="badge">M</span>Status</a>
+                </li>
+              
+                <li>
+                  <a href="#v2ray.core.transport.internet.headers.http.Version"><span class="badge">M</span>Version</a>
+                </li>
+              
+              
+              
+               
+          </li> 
+        </ul>
+      </div>
+
+      
+      <p></p>
+
+      
+      
+        <h3 id="v2ray.core.transport.internet.headers.http.Config">Config</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>request</td>
+                  <td><a href="#v2ray.core.transport.internet.headers.http.RequestConfig">RequestConfig</a></td>
+                  <td></td>
+                  <td><p>Settings for authenticating requests. If not set, client side will not send
+authenication header, and server side will bypass authentication. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>response</td>
+                  <td><a href="#v2ray.core.transport.internet.headers.http.ResponseConfig">ResponseConfig</a></td>
+                  <td></td>
+                  <td><p>Settings for authenticating responses. If not set, client side will bypass
+authentication, and server side will not send authentication header. </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+      
+        <h3 id="v2ray.core.transport.internet.headers.http.Header">Header</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>name</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>&#34;Accept&#34;, &#34;Cookie&#34;, etc </p></td>
+                </tr>
+              
+                <tr>
+                  <td>value</td>
+                  <td><a href="#string">string</a></td>
+                  <td>repeated</td>
+                  <td><p>Each entry must be valid in one piece. Random entry will be chosen if
+multiple entries present. </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+      
+        <h3 id="v2ray.core.transport.internet.headers.http.Method">Method</h3>
+        <p>HTTP method. Default value "GET".</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>value</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+      
+        <h3 id="v2ray.core.transport.internet.headers.http.RequestConfig">RequestConfig</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>version</td>
+                  <td><a href="#v2ray.core.transport.internet.headers.http.Version">Version</a></td>
+                  <td></td>
+                  <td><p>Full HTTP version like &#34;1.1&#34;. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>method</td>
+                  <td><a href="#v2ray.core.transport.internet.headers.http.Method">Method</a></td>
+                  <td></td>
+                  <td><p>GET, POST, CONNECT etc </p></td>
+                </tr>
+              
+                <tr>
+                  <td>uri</td>
+                  <td><a href="#string">string</a></td>
+                  <td>repeated</td>
+                  <td><p>URI like &#34;/login.php&#34; </p></td>
+                </tr>
+              
+                <tr>
+                  <td>header</td>
+                  <td><a href="#v2ray.core.transport.internet.headers.http.Header">Header</a></td>
+                  <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+      
+        <h3 id="v2ray.core.transport.internet.headers.http.ResponseConfig">ResponseConfig</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>version</td>
+                  <td><a href="#v2ray.core.transport.internet.headers.http.Version">Version</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>status</td>
+                  <td><a href="#v2ray.core.transport.internet.headers.http.Status">Status</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>header</td>
+                  <td><a href="#v2ray.core.transport.internet.headers.http.Header">Header</a></td>
+                  <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+      
+        <h3 id="v2ray.core.transport.internet.headers.http.Status">Status</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>code</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>Status code. Default &#34;200&#34;. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>reason</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>Statue reason. Default &#34;OK&#34;. </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+      
+        <h3 id="v2ray.core.transport.internet.headers.http.Version">Version</h3>
+        <p>HTTP version. Default value "1.1".</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>value</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+
+      
+
+      
+
+      
+    
+  </body>
+</html>
+

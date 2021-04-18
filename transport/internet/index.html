@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>V2Ray proto documentations</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Ubuntu:400,700,400italic"/>
+    <style>
+      body {
+        width: 60em;
+        margin: 1em auto;
+        color: #222;
+        font-family: "Ubuntu", sans-serif;
+        padding-bottom: 4em;
+      }
+
+      h1 {
+        font-weight: normal;
+        border-bottom: 1px solid #aaa; 
+      }
+
+      h2 {
+        border-bottom: 1px solid #aaa; 
+        margin: 1.5em 0;
+        margin-bottom: 0.5em;
+      }
+
+      h3 {
+        font-weight: normal;
+        border-bottom: 1px solid #aaa; 
+      }
+
+      a {
+        text-decoration: none;
+        color: #567e25;
+      }
+
+      table {
+        width: 100%;
+        font-size: 80%;
+        border-collapse: collapse;
+      }
+
+      thead {
+        font-weight: 700;
+        background-color: #dcdcdc;
+      }
+
+      tbody tr:nth-child(even) {
+        background-color: #fbfbfb;
+      }
+
+      td {
+        border: 1px solid #ccc;
+        padding: 0.5ex 2ex;
+      }
+
+      td p {
+        text-indent: 1em;
+        margin: 0;
+      }
+
+      td p:nth-child(1) {
+        text-indent: 0;  
+      }
+
+       
+      .field-table td:nth-child(1) {  
+        width: 10em;
+      }
+      .field-table td:nth-child(2) {  
+        width: 10em;
+      }
+      .field-table td:nth-child(3) {  
+        width: 6em;
+      }
+      .field-table td:nth-child(4) {  
+        width: auto;
+      }
+
+       
+      .extension-table td:nth-child(1) {  
+        width: 10em;
+      }
+      .extension-table td:nth-child(2) {  
+        width: 10em;
+      }
+      .extension-table td:nth-child(3) {  
+        width: 10em;
+      }
+      .extension-table td:nth-child(4) {  
+        width: 5em;
+      }
+      .extension-table td:nth-child(5) {  
+        width: auto;
+      }
+
+       
+      .enum-table td:nth-child(1) {  
+        width: 10em;
+      }
+      .enum-table td:nth-child(2) {  
+        width: 10em;
+      }
+      .enum-table td:nth-child(3) {  
+        width: auto;
+      }
+
+       
+      .scalar-value-types-table tr {
+        height: 3em;
+      }
+
+       
+      #toc-container ul {
+        list-style-type: none;
+        padding-left: 1em;
+        line-height: 180%;
+        margin: 0;
+      }
+      #toc > li > a {
+        font-weight: bold;
+      }
+
+       
+      .file-heading {
+        width: 100%;
+        display: table;
+        border-bottom: 1px solid #aaa;
+        margin: 4em 0 1.5em 0;
+      }
+      .file-heading h2 {
+        border: none;
+        display: table-cell;
+      }
+      .file-heading a {
+        text-align: right;
+        display: table-cell;
+      }
+
+       
+      .badge {
+        width: 1.6em;
+        height: 1.6em;
+        display: inline-block;
+
+        line-height: 1.6em;
+        text-align: center;
+        font-weight: bold;
+        font-size: 60%;
+
+        color: #89ba48;
+        background-color: #dff0c8;
+
+        margin: 0.5ex 1em 0.5ex -1em;
+        border: 1px solid #fbfbfb;
+        border-radius: 1ex;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1 id="title">Package <code>v2ray.core.transport.internet</code></h1>
+    <p>Provided by:</p>
+    
+      <ul id="toc">
+        <li><a href="#file_transport%2finternet%2fconfig.proto">transport/internet/config.proto</a></li>
+      </ul>
+    
+    
+      <div class="file-heading">
+        <h2 id="file_transport/internet/config.proto">transport/internet/config.proto</h2><a href="#title">Top</a>
+      </div>
+
+      
+        <div class="field-table">
+          <h3>Dependencies</h3>
+          
+            <p><a href="/common/serial/index.html">common/serial</a></p>
+          
+        </div>
+      
+
+      <div id="toc-container">
+        <h3>Contents</h3>
+        <ul id="toc">
+          
+          <li>  
+              
+                <li>
+                  <a href="#v2ray.core.transport.internet.ProxyConfig"><span class="badge">M</span>ProxyConfig</a>
+                </li>
+              
+                <li>
+                  <a href="#v2ray.core.transport.internet.SocketConfig"><span class="badge">M</span>SocketConfig</a>
+                </li>
+              
+                <li>
+                  <a href="#v2ray.core.transport.internet.StreamConfig"><span class="badge">M</span>StreamConfig</a>
+                </li>
+              
+                <li>
+                  <a href="#v2ray.core.transport.internet.TransportConfig"><span class="badge">M</span>TransportConfig</a>
+                </li>
+              
+              
+                <li>
+                  <a href="#v2ray.core.transport.internet.SocketConfig.TCPFastOpenState"><span class="badge">E</span>SocketConfig.TCPFastOpenState</a>
+                </li>
+              
+                <li>
+                  <a href="#v2ray.core.transport.internet.SocketConfig.TProxyMode"><span class="badge">E</span>SocketConfig.TProxyMode</a>
+                </li>
+              
+                <li>
+                  <a href="#v2ray.core.transport.internet.TransportProtocol"><span class="badge">E</span>TransportProtocol</a>
+                </li>
+              
+              
+               
+          </li> 
+        </ul>
+      </div>
+
+      
+      <p></p>
+
+      
+      
+        <h3 id="v2ray.core.transport.internet.ProxyConfig">ProxyConfig</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>tag</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>transportLayerProxy</td>
+                  <td><a href="#bool">bool</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+      
+        <h3 id="v2ray.core.transport.internet.SocketConfig">SocketConfig</h3>
+        <p>SocketConfig is options to be applied on network sockets.</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>mark</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td></td>
+                  <td><p>Mark of the connection. If non-zero, the value will be set to SO_MARK. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>tfo</td>
+                  <td><a href="#v2ray.core.transport.internet.SocketConfig.TCPFastOpenState">SocketConfig.TCPFastOpenState</a></td>
+                  <td></td>
+                  <td><p>TFO is the state of TFO settings. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>tproxy</td>
+                  <td><a href="#v2ray.core.transport.internet.SocketConfig.TProxyMode">SocketConfig.TProxyMode</a></td>
+                  <td></td>
+                  <td><p>TProxy is for enabling TProxy socket option. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>receive_original_dest_address</td>
+                  <td><a href="#bool">bool</a></td>
+                  <td></td>
+                  <td><p>ReceiveOriginalDestAddress is for enabling IP_RECVORIGDSTADDR socket
+option. This option is for UDP only. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>bind_address</td>
+                  <td><a href="#bytes">bytes</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>bind_port</td>
+                  <td><a href="#uint32">uint32</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>accept_proxy_protocol</td>
+                  <td><a href="#bool">bool</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+      
+        <h3 id="v2ray.core.transport.internet.StreamConfig">StreamConfig</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>protocol</td>
+                  <td><a href="#v2ray.core.transport.internet.TransportProtocol">TransportProtocol</a></td>
+                  <td></td>
+                  <td><p>Effective network. Deprecated. Use the string form below. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>protocol_name</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>Effective network. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>transport_settings</td>
+                  <td><a href="#v2ray.core.transport.internet.TransportConfig">TransportConfig</a></td>
+                  <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>security_type</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>Type of security. Must be a message name of the settings proto. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>security_settings</td>
+                  <td><a href="/common/serial/index.html#v2ray.core.common.serial.TypedMessage">v2ray.core.common.serial.TypedMessage</a></td>
+                  <td>repeated</td>
+                  <td><p>Settings for transport security. For now the only choice is TLS. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>socket_settings</td>
+                  <td><a href="#v2ray.core.transport.internet.SocketConfig">SocketConfig</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+            
+            
+            <h4>Fields with deprecated option</h4>
+            <table>
+              <thead>
+                <tr>
+                  <td>Name</td>
+                  <td>Option</td>
+                </tr>
+              </thead>
+              <tbody>
+              
+                <tr>
+                  <td>protocol</td>
+                  <td><p>true</p></td>
+                </tr>
+              
+              </tbody>
+            </table>
+            
+          
+
+        
+      
+      
+        <h3 id="v2ray.core.transport.internet.TransportConfig">TransportConfig</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>protocol</td>
+                  <td><a href="#v2ray.core.transport.internet.TransportProtocol">TransportProtocol</a></td>
+                  <td></td>
+                  <td><p>Type of network that this settings supports.
+Deprecated. Use the string form below. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>protocol_name</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>Type of network that this settings supports. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>settings</td>
+                  <td><a href="/common/serial/index.html#v2ray.core.common.serial.TypedMessage">v2ray.core.common.serial.TypedMessage</a></td>
+                  <td></td>
+                  <td><p>Specific settings. Must be of the transports. </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+            
+            
+            <h4>Fields with deprecated option</h4>
+            <table>
+              <thead>
+                <tr>
+                  <td>Name</td>
+                  <td>Option</td>
+                </tr>
+              </thead>
+              <tbody>
+              
+                <tr>
+                  <td>protocol</td>
+                  <td><p>true</p></td>
+                </tr>
+              
+              </tbody>
+            </table>
+            
+          
+
+        
+      
+
+      
+        <h3 id="v2ray.core.transport.internet.SocketConfig.TCPFastOpenState">SocketConfig.TCPFastOpenState</h3>
+        <p></p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Name</td><td>Number</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td>AsIs</td>
+                <td>0</td>
+                <td><p>AsIs is to leave the current TFO state as is, unmodified.</p></td>
+              </tr>
+            
+              <tr>
+                <td>Enable</td>
+                <td>1</td>
+                <td><p>Enable is for enabling TFO explictly.</p></td>
+              </tr>
+            
+              <tr>
+                <td>Disable</td>
+                <td>2</td>
+                <td><p>Disable is for disabling TFO explictly.</p></td>
+              </tr>
+            
+          </tbody>
+        </table>
+      
+        <h3 id="v2ray.core.transport.internet.SocketConfig.TProxyMode">SocketConfig.TProxyMode</h3>
+        <p></p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Name</td><td>Number</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td>Off</td>
+                <td>0</td>
+                <td><p>TProxy is off.</p></td>
+              </tr>
+            
+              <tr>
+                <td>TProxy</td>
+                <td>1</td>
+                <td><p>TProxy mode.</p></td>
+              </tr>
+            
+              <tr>
+                <td>Redirect</td>
+                <td>2</td>
+                <td><p>Redirect mode.</p></td>
+              </tr>
+            
+          </tbody>
+        </table>
+      
+        <h3 id="v2ray.core.transport.internet.TransportProtocol">TransportProtocol</h3>
+        <p></p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Name</td><td>Number</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td>TCP</td>
+                <td>0</td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>UDP</td>
+                <td>1</td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>MKCP</td>
+                <td>2</td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>WebSocket</td>
+                <td>3</td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>HTTP</td>
+                <td>4</td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>DomainSocket</td>
+                <td>5</td>
+                <td><p></p></td>
+              </tr>
+            
+          </tbody>
+        </table>
+      
+
+      
+
+      
+    
+  </body>
+</html>
+

@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>V2Ray proto documentations</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Ubuntu:400,700,400italic"/>
+    <style>
+      body {
+        width: 60em;
+        margin: 1em auto;
+        color: #222;
+        font-family: "Ubuntu", sans-serif;
+        padding-bottom: 4em;
+      }
+
+      h1 {
+        font-weight: normal;
+        border-bottom: 1px solid #aaa; 
+      }
+
+      h2 {
+        border-bottom: 1px solid #aaa; 
+        margin: 1.5em 0;
+        margin-bottom: 0.5em;
+      }
+
+      h3 {
+        font-weight: normal;
+        border-bottom: 1px solid #aaa; 
+      }
+
+      a {
+        text-decoration: none;
+        color: #567e25;
+      }
+
+      table {
+        width: 100%;
+        font-size: 80%;
+        border-collapse: collapse;
+      }
+
+      thead {
+        font-weight: 700;
+        background-color: #dcdcdc;
+      }
+
+      tbody tr:nth-child(even) {
+        background-color: #fbfbfb;
+      }
+
+      td {
+        border: 1px solid #ccc;
+        padding: 0.5ex 2ex;
+      }
+
+      td p {
+        text-indent: 1em;
+        margin: 0;
+      }
+
+      td p:nth-child(1) {
+        text-indent: 0;  
+      }
+
+       
+      .field-table td:nth-child(1) {  
+        width: 10em;
+      }
+      .field-table td:nth-child(2) {  
+        width: 10em;
+      }
+      .field-table td:nth-child(3) {  
+        width: 6em;
+      }
+      .field-table td:nth-child(4) {  
+        width: auto;
+      }
+
+       
+      .extension-table td:nth-child(1) {  
+        width: 10em;
+      }
+      .extension-table td:nth-child(2) {  
+        width: 10em;
+      }
+      .extension-table td:nth-child(3) {  
+        width: 10em;
+      }
+      .extension-table td:nth-child(4) {  
+        width: 5em;
+      }
+      .extension-table td:nth-child(5) {  
+        width: auto;
+      }
+
+       
+      .enum-table td:nth-child(1) {  
+        width: 10em;
+      }
+      .enum-table td:nth-child(2) {  
+        width: 10em;
+      }
+      .enum-table td:nth-child(3) {  
+        width: auto;
+      }
+
+       
+      .scalar-value-types-table tr {
+        height: 3em;
+      }
+
+       
+      #toc-container ul {
+        list-style-type: none;
+        padding-left: 1em;
+        line-height: 180%;
+        margin: 0;
+      }
+      #toc > li > a {
+        font-weight: bold;
+      }
+
+       
+      .file-heading {
+        width: 100%;
+        display: table;
+        border-bottom: 1px solid #aaa;
+        margin: 4em 0 1.5em 0;
+      }
+      .file-heading h2 {
+        border: none;
+        display: table-cell;
+      }
+      .file-heading a {
+        text-align: right;
+        display: table-cell;
+      }
+
+       
+      .badge {
+        width: 1.6em;
+        height: 1.6em;
+        display: inline-block;
+
+        line-height: 1.6em;
+        text-align: center;
+        font-weight: bold;
+        font-size: 60%;
+
+        color: #89ba48;
+        background-color: #dff0c8;
+
+        margin: 0.5ex 1em 0.5ex -1em;
+        border: 1px solid #fbfbfb;
+        border-radius: 1ex;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1 id="title">Package <code>v2ray.core.app.proxyman.command</code></h1>
+    <p>Provided by:</p>
+    
+      <ul id="toc">
+        <li><a href="#file_app%2fproxyman%2fcommand%2fcommand.proto">app/proxyman/command/command.proto</a></li>
+      </ul>
+    
+    
+      <div class="file-heading">
+        <h2 id="file_app/proxyman/command/command.proto">app/proxyman/command/command.proto</h2><a href="#title">Top</a>
+      </div>
+
+      
+        <div class="field-table">
+          <h3>Dependencies</h3>
+          
+            <p><a href="/common/protocol/index.html">common/protocol</a></p>
+          
+            <p><a href="/common/serial/index.html">common/serial</a></p>
+          
+            <p><a href="/./index.html">.</a></p>
+          
+        </div>
+      
+
+      <div id="toc-container">
+        <h3>Contents</h3>
+        <ul id="toc">
+          
+          <li>  
+              
+                <li>
+                  <a href="#v2ray.core.app.proxyman.command.AddInboundRequest"><span class="badge">M</span>AddInboundRequest</a>
+                </li>
+              
+                <li>
+                  <a href="#v2ray.core.app.proxyman.command.AddInboundResponse"><span class="badge">M</span>AddInboundResponse</a>
+                </li>
+              
+                <li>
+                  <a href="#v2ray.core.app.proxyman.command.AddOutboundRequest"><span class="badge">M</span>AddOutboundRequest</a>
+                </li>
+              
+                <li>
+                  <a href="#v2ray.core.app.proxyman.command.AddOutboundResponse"><span class="badge">M</span>AddOutboundResponse</a>
+                </li>
+              
+                <li>
+                  <a href="#v2ray.core.app.proxyman.command.AddUserOperation"><span class="badge">M</span>AddUserOperation</a>
+                </li>
+              
+                <li>
+                  <a href="#v2ray.core.app.proxyman.command.AlterInboundRequest"><span class="badge">M</span>AlterInboundRequest</a>
+                </li>
+              
+                <li>
+                  <a href="#v2ray.core.app.proxyman.command.AlterInboundResponse"><span class="badge">M</span>AlterInboundResponse</a>
+                </li>
+              
+                <li>
+                  <a href="#v2ray.core.app.proxyman.command.AlterOutboundRequest"><span class="badge">M</span>AlterOutboundRequest</a>
+                </li>
+              
+                <li>
+                  <a href="#v2ray.core.app.proxyman.command.AlterOutboundResponse"><span class="badge">M</span>AlterOutboundResponse</a>
+                </li>
+              
+                <li>
+                  <a href="#v2ray.core.app.proxyman.command.Config"><span class="badge">M</span>Config</a>
+                </li>
+              
+                <li>
+                  <a href="#v2ray.core.app.proxyman.command.RemoveInboundRequest"><span class="badge">M</span>RemoveInboundRequest</a>
+                </li>
+              
+                <li>
+                  <a href="#v2ray.core.app.proxyman.command.RemoveInboundResponse"><span class="badge">M</span>RemoveInboundResponse</a>
+                </li>
+              
+                <li>
+                  <a href="#v2ray.core.app.proxyman.command.RemoveOutboundRequest"><span class="badge">M</span>RemoveOutboundRequest</a>
+                </li>
+              
+                <li>
+                  <a href="#v2ray.core.app.proxyman.command.RemoveOutboundResponse"><span class="badge">M</span>RemoveOutboundResponse</a>
+                </li>
+              
+                <li>
+                  <a href="#v2ray.core.app.proxyman.command.RemoveUserOperation"><span class="badge">M</span>RemoveUserOperation</a>
+                </li>
+              
+              
+              
+              
+                <li>
+                  <a href="#v2ray.core.app.proxyman.command.HandlerService"><span class="badge">S</span>HandlerService</a>
+                </li>
+               
+          </li> 
+        </ul>
+      </div>
+
+      
+      <p></p>
+
+      
+      
+        <h3 id="v2ray.core.app.proxyman.command.AddInboundRequest">AddInboundRequest</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>inbound</td>
+                  <td><a href="/./index.html#v2ray.core.InboundHandlerConfig">v2ray.core.InboundHandlerConfig</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+      
+        <h3 id="v2ray.core.app.proxyman.command.AddInboundResponse">AddInboundResponse</h3>
+        <p></p>
+
+        
+
+        
+      
+      
+        <h3 id="v2ray.core.app.proxyman.command.AddOutboundRequest">AddOutboundRequest</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>outbound</td>
+                  <td><a href="/./index.html#v2ray.core.OutboundHandlerConfig">v2ray.core.OutboundHandlerConfig</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+      
+        <h3 id="v2ray.core.app.proxyman.command.AddOutboundResponse">AddOutboundResponse</h3>
+        <p></p>
+
+        
+
+        
+      
+      
+        <h3 id="v2ray.core.app.proxyman.command.AddUserOperation">AddUserOperation</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>user</td>
+                  <td><a href="/common/protocol/index.html#v2ray.core.common.protocol.User">v2ray.core.common.protocol.User</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+      
+        <h3 id="v2ray.core.app.proxyman.command.AlterInboundRequest">AlterInboundRequest</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>tag</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>operation</td>
+                  <td><a href="/common/serial/index.html#v2ray.core.common.serial.TypedMessage">v2ray.core.common.serial.TypedMessage</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+      
+        <h3 id="v2ray.core.app.proxyman.command.AlterInboundResponse">AlterInboundResponse</h3>
+        <p></p>
+
+        
+
+        
+      
+      
+        <h3 id="v2ray.core.app.proxyman.command.AlterOutboundRequest">AlterOutboundRequest</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>tag</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>operation</td>
+                  <td><a href="/common/serial/index.html#v2ray.core.common.serial.TypedMessage">v2ray.core.common.serial.TypedMessage</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+      
+        <h3 id="v2ray.core.app.proxyman.command.AlterOutboundResponse">AlterOutboundResponse</h3>
+        <p></p>
+
+        
+
+        
+      
+      
+        <h3 id="v2ray.core.app.proxyman.command.Config">Config</h3>
+        <p></p>
+
+        
+
+        
+      
+      
+        <h3 id="v2ray.core.app.proxyman.command.RemoveInboundRequest">RemoveInboundRequest</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>tag</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+      
+        <h3 id="v2ray.core.app.proxyman.command.RemoveInboundResponse">RemoveInboundResponse</h3>
+        <p></p>
+
+        
+
+        
+      
+      
+        <h3 id="v2ray.core.app.proxyman.command.RemoveOutboundRequest">RemoveOutboundRequest</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>tag</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+      
+        <h3 id="v2ray.core.app.proxyman.command.RemoveOutboundResponse">RemoveOutboundResponse</h3>
+        <p></p>
+
+        
+
+        
+      
+      
+        <h3 id="v2ray.core.app.proxyman.command.RemoveUserOperation">RemoveUserOperation</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>email</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+
+      
+
+      
+
+      
+        <h3 id="v2ray.core.app.proxyman.command.HandlerService">HandlerService</h3>
+        <p></p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Method Name</td><td>Request Type</td><td>Response Type</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td>AddInbound</td>
+                <td><a href="#v2ray.core.app.proxyman.command.AddInboundRequest">AddInboundRequest</a></td>
+                <td><a href="#v2ray.core.app.proxyman.command.AddInboundResponse">AddInboundResponse</a></td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>RemoveInbound</td>
+                <td><a href="#v2ray.core.app.proxyman.command.RemoveInboundRequest">RemoveInboundRequest</a></td>
+                <td><a href="#v2ray.core.app.proxyman.command.RemoveInboundResponse">RemoveInboundResponse</a></td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>AlterInbound</td>
+                <td><a href="#v2ray.core.app.proxyman.command.AlterInboundRequest">AlterInboundRequest</a></td>
+                <td><a href="#v2ray.core.app.proxyman.command.AlterInboundResponse">AlterInboundResponse</a></td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>AddOutbound</td>
+                <td><a href="#v2ray.core.app.proxyman.command.AddOutboundRequest">AddOutboundRequest</a></td>
+                <td><a href="#v2ray.core.app.proxyman.command.AddOutboundResponse">AddOutboundResponse</a></td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>RemoveOutbound</td>
+                <td><a href="#v2ray.core.app.proxyman.command.RemoveOutboundRequest">RemoveOutboundRequest</a></td>
+                <td><a href="#v2ray.core.app.proxyman.command.RemoveOutboundResponse">RemoveOutboundResponse</a></td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>AlterOutbound</td>
+                <td><a href="#v2ray.core.app.proxyman.command.AlterOutboundRequest">AlterOutboundRequest</a></td>
+                <td><a href="#v2ray.core.app.proxyman.command.AlterOutboundResponse">AlterOutboundResponse</a></td>
+                <td><p></p></td>
+              </tr>
+            
+          </tbody>
+        </table>
+
+        
+    
+  </body>
+</html>
+

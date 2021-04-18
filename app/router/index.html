@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>V2Ray proto documentations</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Ubuntu:400,700,400italic"/>
+    <style>
+      body {
+        width: 60em;
+        margin: 1em auto;
+        color: #222;
+        font-family: "Ubuntu", sans-serif;
+        padding-bottom: 4em;
+      }
+
+      h1 {
+        font-weight: normal;
+        border-bottom: 1px solid #aaa; 
+      }
+
+      h2 {
+        border-bottom: 1px solid #aaa; 
+        margin: 1.5em 0;
+        margin-bottom: 0.5em;
+      }
+
+      h3 {
+        font-weight: normal;
+        border-bottom: 1px solid #aaa; 
+      }
+
+      a {
+        text-decoration: none;
+        color: #567e25;
+      }
+
+      table {
+        width: 100%;
+        font-size: 80%;
+        border-collapse: collapse;
+      }
+
+      thead {
+        font-weight: 700;
+        background-color: #dcdcdc;
+      }
+
+      tbody tr:nth-child(even) {
+        background-color: #fbfbfb;
+      }
+
+      td {
+        border: 1px solid #ccc;
+        padding: 0.5ex 2ex;
+      }
+
+      td p {
+        text-indent: 1em;
+        margin: 0;
+      }
+
+      td p:nth-child(1) {
+        text-indent: 0;  
+      }
+
+       
+      .field-table td:nth-child(1) {  
+        width: 10em;
+      }
+      .field-table td:nth-child(2) {  
+        width: 10em;
+      }
+      .field-table td:nth-child(3) {  
+        width: 6em;
+      }
+      .field-table td:nth-child(4) {  
+        width: auto;
+      }
+
+       
+      .extension-table td:nth-child(1) {  
+        width: 10em;
+      }
+      .extension-table td:nth-child(2) {  
+        width: 10em;
+      }
+      .extension-table td:nth-child(3) {  
+        width: 10em;
+      }
+      .extension-table td:nth-child(4) {  
+        width: 5em;
+      }
+      .extension-table td:nth-child(5) {  
+        width: auto;
+      }
+
+       
+      .enum-table td:nth-child(1) {  
+        width: 10em;
+      }
+      .enum-table td:nth-child(2) {  
+        width: 10em;
+      }
+      .enum-table td:nth-child(3) {  
+        width: auto;
+      }
+
+       
+      .scalar-value-types-table tr {
+        height: 3em;
+      }
+
+       
+      #toc-container ul {
+        list-style-type: none;
+        padding-left: 1em;
+        line-height: 180%;
+        margin: 0;
+      }
+      #toc > li > a {
+        font-weight: bold;
+      }
+
+       
+      .file-heading {
+        width: 100%;
+        display: table;
+        border-bottom: 1px solid #aaa;
+        margin: 4em 0 1.5em 0;
+      }
+      .file-heading h2 {
+        border: none;
+        display: table-cell;
+      }
+      .file-heading a {
+        text-align: right;
+        display: table-cell;
+      }
+
+       
+      .badge {
+        width: 1.6em;
+        height: 1.6em;
+        display: inline-block;
+
+        line-height: 1.6em;
+        text-align: center;
+        font-weight: bold;
+        font-size: 60%;
+
+        color: #89ba48;
+        background-color: #dff0c8;
+
+        margin: 0.5ex 1em 0.5ex -1em;
+        border: 1px solid #fbfbfb;
+        border-radius: 1ex;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1 id="title">Package <code>v2ray.core.app.router</code></h1>
+    <p>Provided by:</p>
+    
+      <ul id="toc">
+        <li><a href="#file_app%2frouter%2fconfig.proto">app/router/config.proto</a></li>
+      </ul>
+    
+    
+      <div class="file-heading">
+        <h2 id="file_app/router/config.proto">app/router/config.proto</h2><a href="#title">Top</a>
+      </div>
+
+      
+        <div class="field-table">
+          <h3>Dependencies</h3>
+          
+            <p><a href="/common/net/index.html">common/net</a></p>
+          
+        </div>
+      
+
+      <div id="toc-container">
+        <h3>Contents</h3>
+        <ul id="toc">
+          
+          <li>  
+              
+                <li>
+                  <a href="#v2ray.core.app.router.BalancingRule"><span class="badge">M</span>BalancingRule</a>
+                </li>
+              
+                <li>
+                  <a href="#v2ray.core.app.router.CIDR"><span class="badge">M</span>CIDR</a>
+                </li>
+              
+                <li>
+                  <a href="#v2ray.core.app.router.Config"><span class="badge">M</span>Config</a>
+                </li>
+              
+                <li>
+                  <a href="#v2ray.core.app.router.Domain"><span class="badge">M</span>Domain</a>
+                </li>
+              
+                <li>
+                  <a href="#v2ray.core.app.router.Domain.Attribute"><span class="badge">M</span>Domain.Attribute</a>
+                </li>
+              
+                <li>
+                  <a href="#v2ray.core.app.router.GeoIP"><span class="badge">M</span>GeoIP</a>
+                </li>
+              
+                <li>
+                  <a href="#v2ray.core.app.router.GeoIPList"><span class="badge">M</span>GeoIPList</a>
+                </li>
+              
+                <li>
+                  <a href="#v2ray.core.app.router.GeoSite"><span class="badge">M</span>GeoSite</a>
+                </li>
+              
+                <li>
+                  <a href="#v2ray.core.app.router.GeoSiteList"><span class="badge">M</span>GeoSiteList</a>
+                </li>
+              
+                <li>
+                  <a href="#v2ray.core.app.router.RoutingRule"><span class="badge">M</span>RoutingRule</a>
+                </li>
+              
+              
+                <li>
+                  <a href="#v2ray.core.app.router.Config.DomainStrategy"><span class="badge">E</span>Config.DomainStrategy</a>
+                </li>
+              
+                <li>
+                  <a href="#v2ray.core.app.router.Domain.Type"><span class="badge">E</span>Domain.Type</a>
+                </li>
+              
+              
+               
+          </li> 
+        </ul>
+      </div>
+
+      
+      <p></p>
+
+      
+      
+        <h3 id="v2ray.core.app.router.BalancingRule">BalancingRule</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>tag</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>outbound_selector</td>
+                  <td><a href="#string">string</a></td>
+                  <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>strategy</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+      
+        <h3 id="v2ray.core.app.router.CIDR">CIDR</h3>
+        <p>IP for routing decision, in CIDR form.</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>ip</td>
+                  <td><a href="#bytes">bytes</a></td>
+                  <td></td>
+                  <td><p>IP address, should be either 4 or 16 bytes. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>prefix</td>
+                  <td><a href="#uint32">uint32</a></td>
+                  <td></td>
+                  <td><p>Number of leading ones in the network mask. </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+      
+        <h3 id="v2ray.core.app.router.Config">Config</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>domain_strategy</td>
+                  <td><a href="#v2ray.core.app.router.Config.DomainStrategy">Config.DomainStrategy</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>rule</td>
+                  <td><a href="#v2ray.core.app.router.RoutingRule">RoutingRule</a></td>
+                  <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>balancing_rule</td>
+                  <td><a href="#v2ray.core.app.router.BalancingRule">BalancingRule</a></td>
+                  <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+      
+        <h3 id="v2ray.core.app.router.Domain">Domain</h3>
+        <p>Domain for routing decision.</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>type</td>
+                  <td><a href="#v2ray.core.app.router.Domain.Type">Domain.Type</a></td>
+                  <td></td>
+                  <td><p>Domain matching type. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>value</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>Domain value. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>attribute</td>
+                  <td><a href="#v2ray.core.app.router.Domain.Attribute">Domain.Attribute</a></td>
+                  <td>repeated</td>
+                  <td><p>Attributes of this domain. May be used for filtering. </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+      
+        <h3 id="v2ray.core.app.router.Domain.Attribute">Domain.Attribute</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>key</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>bool_value</td>
+                  <td><a href="#bool">bool</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>int_value</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+      
+        <h3 id="v2ray.core.app.router.GeoIP">GeoIP</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>country_code</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>cidr</td>
+                  <td><a href="#v2ray.core.app.router.CIDR">CIDR</a></td>
+                  <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>reverse_match</td>
+                  <td><a href="#bool">bool</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+      
+        <h3 id="v2ray.core.app.router.GeoIPList">GeoIPList</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>entry</td>
+                  <td><a href="#v2ray.core.app.router.GeoIP">GeoIP</a></td>
+                  <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+      
+        <h3 id="v2ray.core.app.router.GeoSite">GeoSite</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>country_code</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>domain</td>
+                  <td><a href="#v2ray.core.app.router.Domain">Domain</a></td>
+                  <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+      
+        <h3 id="v2ray.core.app.router.GeoSiteList">GeoSiteList</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>entry</td>
+                  <td><a href="#v2ray.core.app.router.GeoSite">GeoSite</a></td>
+                  <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+      
+        <h3 id="v2ray.core.app.router.RoutingRule">RoutingRule</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>tag</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>Tag of outbound that this rule is pointing to. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>balancing_tag</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>Tag of routing balancer. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>domain</td>
+                  <td><a href="#v2ray.core.app.router.Domain">Domain</a></td>
+                  <td>repeated</td>
+                  <td><p>List of domains for target domain matching. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>cidr</td>
+                  <td><a href="#v2ray.core.app.router.CIDR">CIDR</a></td>
+                  <td>repeated</td>
+                  <td><p>List of CIDRs for target IP address matching.
+Deprecated. Use geoip below. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>geoip</td>
+                  <td><a href="#v2ray.core.app.router.GeoIP">GeoIP</a></td>
+                  <td>repeated</td>
+                  <td><p>List of GeoIPs for target IP address matching. If this entry exists, the
+cidr above will have no effect. GeoIP fields with the same country code are
+supposed to contain exactly same content. They will be merged during
+runtime. For customized GeoIPs, please leave country code empty. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>port_range</td>
+                  <td><a href="/common/net/index.html#v2ray.core.common.net.PortRange">v2ray.core.common.net.PortRange</a></td>
+                  <td></td>
+                  <td><p>A range of port [from, to]. If the destination port is in this range, this
+rule takes effect. Deprecated. Use port_list. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>port_list</td>
+                  <td><a href="/common/net/index.html#v2ray.core.common.net.PortList">v2ray.core.common.net.PortList</a></td>
+                  <td></td>
+                  <td><p>List of ports. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>network_list</td>
+                  <td><a href="/common/net/index.html#v2ray.core.common.net.NetworkList">v2ray.core.common.net.NetworkList</a></td>
+                  <td></td>
+                  <td><p>List of networks. Deprecated. Use networks. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>networks</td>
+                  <td><a href="/common/net/index.html#v2ray.core.common.net.Network">v2ray.core.common.net.Network</a></td>
+                  <td>repeated</td>
+                  <td><p>List of networks for matching. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>source_cidr</td>
+                  <td><a href="#v2ray.core.app.router.CIDR">CIDR</a></td>
+                  <td>repeated</td>
+                  <td><p>List of CIDRs for source IP address matching. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>source_geoip</td>
+                  <td><a href="#v2ray.core.app.router.GeoIP">GeoIP</a></td>
+                  <td>repeated</td>
+                  <td><p>List of GeoIPs for source IP address matching. If this entry exists, the
+source_cidr above will have no effect. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>source_port_list</td>
+                  <td><a href="/common/net/index.html#v2ray.core.common.net.PortList">v2ray.core.common.net.PortList</a></td>
+                  <td></td>
+                  <td><p>List of ports for source port matching. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>user_email</td>
+                  <td><a href="#string">string</a></td>
+                  <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>inbound_tag</td>
+                  <td><a href="#string">string</a></td>
+                  <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>protocol</td>
+                  <td><a href="#string">string</a></td>
+                  <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>attributes</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>domain_matcher</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+            
+            
+            <h4>Fields with deprecated option</h4>
+            <table>
+              <thead>
+                <tr>
+                  <td>Name</td>
+                  <td>Option</td>
+                </tr>
+              </thead>
+              <tbody>
+              
+                <tr>
+                  <td>cidr</td>
+                  <td><p>true</p></td>
+                </tr>
+              
+                <tr>
+                  <td>port_range</td>
+                  <td><p>true</p></td>
+                </tr>
+              
+                <tr>
+                  <td>network_list</td>
+                  <td><p>true</p></td>
+                </tr>
+              
+                <tr>
+                  <td>source_cidr</td>
+                  <td><p>true</p></td>
+                </tr>
+              
+              </tbody>
+            </table>
+            
+          
+
+        
+      
+
+      
+        <h3 id="v2ray.core.app.router.Config.DomainStrategy">Config.DomainStrategy</h3>
+        <p></p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Name</td><td>Number</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td>AsIs</td>
+                <td>0</td>
+                <td><p>Use domain as is.</p></td>
+              </tr>
+            
+              <tr>
+                <td>UseIp</td>
+                <td>1</td>
+                <td><p>Always resolve IP for domains.</p></td>
+              </tr>
+            
+              <tr>
+                <td>IpIfNonMatch</td>
+                <td>2</td>
+                <td><p>Resolve to IP if the domain doesn&#39;t match any rules.</p></td>
+              </tr>
+            
+              <tr>
+                <td>IpOnDemand</td>
+                <td>3</td>
+                <td><p>Resolve to IP if any rule requires IP matching.</p></td>
+              </tr>
+            
+          </tbody>
+        </table>
+      
+        <h3 id="v2ray.core.app.router.Domain.Type">Domain.Type</h3>
+        <p>Type of domain value.</p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Name</td><td>Number</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td>Plain</td>
+                <td>0</td>
+                <td><p>The value is used as is.</p></td>
+              </tr>
+            
+              <tr>
+                <td>Regex</td>
+                <td>1</td>
+                <td><p>The value is used as a regular expression.</p></td>
+              </tr>
+            
+              <tr>
+                <td>Domain</td>
+                <td>2</td>
+                <td><p>The value is a root domain.</p></td>
+              </tr>
+            
+              <tr>
+                <td>Full</td>
+                <td>3</td>
+                <td><p>The value is a domain.</p></td>
+              </tr>
+            
+          </tbody>
+        </table>
+      
+
+      
+
+      
+    
+  </body>
+</html>
+

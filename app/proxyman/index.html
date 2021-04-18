@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>V2Ray proto documentations</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Ubuntu:400,700,400italic"/>
+    <style>
+      body {
+        width: 60em;
+        margin: 1em auto;
+        color: #222;
+        font-family: "Ubuntu", sans-serif;
+        padding-bottom: 4em;
+      }
+
+      h1 {
+        font-weight: normal;
+        border-bottom: 1px solid #aaa; 
+      }
+
+      h2 {
+        border-bottom: 1px solid #aaa; 
+        margin: 1.5em 0;
+        margin-bottom: 0.5em;
+      }
+
+      h3 {
+        font-weight: normal;
+        border-bottom: 1px solid #aaa; 
+      }
+
+      a {
+        text-decoration: none;
+        color: #567e25;
+      }
+
+      table {
+        width: 100%;
+        font-size: 80%;
+        border-collapse: collapse;
+      }
+
+      thead {
+        font-weight: 700;
+        background-color: #dcdcdc;
+      }
+
+      tbody tr:nth-child(even) {
+        background-color: #fbfbfb;
+      }
+
+      td {
+        border: 1px solid #ccc;
+        padding: 0.5ex 2ex;
+      }
+
+      td p {
+        text-indent: 1em;
+        margin: 0;
+      }
+
+      td p:nth-child(1) {
+        text-indent: 0;  
+      }
+
+       
+      .field-table td:nth-child(1) {  
+        width: 10em;
+      }
+      .field-table td:nth-child(2) {  
+        width: 10em;
+      }
+      .field-table td:nth-child(3) {  
+        width: 6em;
+      }
+      .field-table td:nth-child(4) {  
+        width: auto;
+      }
+
+       
+      .extension-table td:nth-child(1) {  
+        width: 10em;
+      }
+      .extension-table td:nth-child(2) {  
+        width: 10em;
+      }
+      .extension-table td:nth-child(3) {  
+        width: 10em;
+      }
+      .extension-table td:nth-child(4) {  
+        width: 5em;
+      }
+      .extension-table td:nth-child(5) {  
+        width: auto;
+      }
+
+       
+      .enum-table td:nth-child(1) {  
+        width: 10em;
+      }
+      .enum-table td:nth-child(2) {  
+        width: 10em;
+      }
+      .enum-table td:nth-child(3) {  
+        width: auto;
+      }
+
+       
+      .scalar-value-types-table tr {
+        height: 3em;
+      }
+
+       
+      #toc-container ul {
+        list-style-type: none;
+        padding-left: 1em;
+        line-height: 180%;
+        margin: 0;
+      }
+      #toc > li > a {
+        font-weight: bold;
+      }
+
+       
+      .file-heading {
+        width: 100%;
+        display: table;
+        border-bottom: 1px solid #aaa;
+        margin: 4em 0 1.5em 0;
+      }
+      .file-heading h2 {
+        border: none;
+        display: table-cell;
+      }
+      .file-heading a {
+        text-align: right;
+        display: table-cell;
+      }
+
+       
+      .badge {
+        width: 1.6em;
+        height: 1.6em;
+        display: inline-block;
+
+        line-height: 1.6em;
+        text-align: center;
+        font-weight: bold;
+        font-size: 60%;
+
+        color: #89ba48;
+        background-color: #dff0c8;
+
+        margin: 0.5ex 1em 0.5ex -1em;
+        border: 1px solid #fbfbfb;
+        border-radius: 1ex;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1 id="title">Package <code>v2ray.core.app.proxyman</code></h1>
+    <p>Provided by:</p>
+    
+      <ul id="toc">
+        <li><a href="#file_app%2fproxyman%2fconfig.proto">app/proxyman/config.proto</a></li>
+      </ul>
+    
+    
+      <div class="file-heading">
+        <h2 id="file_app/proxyman/config.proto">app/proxyman/config.proto</h2><a href="#title">Top</a>
+      </div>
+
+      
+        <div class="field-table">
+          <h3>Dependencies</h3>
+          
+            <p><a href="/common/net/index.html">common/net</a></p>
+          
+            <p><a href="/transport/internet/index.html">transport/internet</a></p>
+          
+            <p><a href="/common/serial/index.html">common/serial</a></p>
+          
+        </div>
+      
+
+      <div id="toc-container">
+        <h3>Contents</h3>
+        <ul id="toc">
+          
+          <li>  
+              
+                <li>
+                  <a href="#v2ray.core.app.proxyman.AllocationStrategy"><span class="badge">M</span>AllocationStrategy</a>
+                </li>
+              
+                <li>
+                  <a href="#v2ray.core.app.proxyman.AllocationStrategy.AllocationStrategyConcurrency"><span class="badge">M</span>AllocationStrategy.AllocationStrategyConcurrency</a>
+                </li>
+              
+                <li>
+                  <a href="#v2ray.core.app.proxyman.AllocationStrategy.AllocationStrategyRefresh"><span class="badge">M</span>AllocationStrategy.AllocationStrategyRefresh</a>
+                </li>
+              
+                <li>
+                  <a href="#v2ray.core.app.proxyman.InboundConfig"><span class="badge">M</span>InboundConfig</a>
+                </li>
+              
+                <li>
+                  <a href="#v2ray.core.app.proxyman.InboundHandlerConfig"><span class="badge">M</span>InboundHandlerConfig</a>
+                </li>
+              
+                <li>
+                  <a href="#v2ray.core.app.proxyman.MultiplexingConfig"><span class="badge">M</span>MultiplexingConfig</a>
+                </li>
+              
+                <li>
+                  <a href="#v2ray.core.app.proxyman.OutboundConfig"><span class="badge">M</span>OutboundConfig</a>
+                </li>
+              
+                <li>
+                  <a href="#v2ray.core.app.proxyman.ReceiverConfig"><span class="badge">M</span>ReceiverConfig</a>
+                </li>
+              
+                <li>
+                  <a href="#v2ray.core.app.proxyman.SenderConfig"><span class="badge">M</span>SenderConfig</a>
+                </li>
+              
+                <li>
+                  <a href="#v2ray.core.app.proxyman.SniffingConfig"><span class="badge">M</span>SniffingConfig</a>
+                </li>
+              
+              
+                <li>
+                  <a href="#v2ray.core.app.proxyman.AllocationStrategy.Type"><span class="badge">E</span>AllocationStrategy.Type</a>
+                </li>
+              
+                <li>
+                  <a href="#v2ray.core.app.proxyman.KnownProtocols"><span class="badge">E</span>KnownProtocols</a>
+                </li>
+              
+              
+               
+          </li> 
+        </ul>
+      </div>
+
+      
+      <p></p>
+
+      
+      
+        <h3 id="v2ray.core.app.proxyman.AllocationStrategy">AllocationStrategy</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>type</td>
+                  <td><a href="#v2ray.core.app.proxyman.AllocationStrategy.Type">AllocationStrategy.Type</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>concurrency</td>
+                  <td><a href="#v2ray.core.app.proxyman.AllocationStrategy.AllocationStrategyConcurrency">AllocationStrategy.AllocationStrategyConcurrency</a></td>
+                  <td></td>
+                  <td><p>Number of handlers (ports) running in parallel.
+Default value is 3 if unset. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>refresh</td>
+                  <td><a href="#v2ray.core.app.proxyman.AllocationStrategy.AllocationStrategyRefresh">AllocationStrategy.AllocationStrategyRefresh</a></td>
+                  <td></td>
+                  <td><p>Number of minutes before a handler is regenerated.
+Default value is 5 if unset. </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+      
+        <h3 id="v2ray.core.app.proxyman.AllocationStrategy.AllocationStrategyConcurrency">AllocationStrategy.AllocationStrategyConcurrency</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>value</td>
+                  <td><a href="#uint32">uint32</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+      
+        <h3 id="v2ray.core.app.proxyman.AllocationStrategy.AllocationStrategyRefresh">AllocationStrategy.AllocationStrategyRefresh</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>value</td>
+                  <td><a href="#uint32">uint32</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+      
+        <h3 id="v2ray.core.app.proxyman.InboundConfig">InboundConfig</h3>
+        <p></p>
+
+        
+
+        
+      
+      
+        <h3 id="v2ray.core.app.proxyman.InboundHandlerConfig">InboundHandlerConfig</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>tag</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>receiver_settings</td>
+                  <td><a href="/common/serial/index.html#v2ray.core.common.serial.TypedMessage">v2ray.core.common.serial.TypedMessage</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>proxy_settings</td>
+                  <td><a href="/common/serial/index.html#v2ray.core.common.serial.TypedMessage">v2ray.core.common.serial.TypedMessage</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+      
+        <h3 id="v2ray.core.app.proxyman.MultiplexingConfig">MultiplexingConfig</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>enabled</td>
+                  <td><a href="#bool">bool</a></td>
+                  <td></td>
+                  <td><p>Whether or not Mux is enabled. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>concurrency</td>
+                  <td><a href="#uint32">uint32</a></td>
+                  <td></td>
+                  <td><p>Max number of concurrent connections that one Mux connection can handle. </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+      
+        <h3 id="v2ray.core.app.proxyman.OutboundConfig">OutboundConfig</h3>
+        <p></p>
+
+        
+
+        
+      
+      
+        <h3 id="v2ray.core.app.proxyman.ReceiverConfig">ReceiverConfig</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>port_range</td>
+                  <td><a href="/common/net/index.html#v2ray.core.common.net.PortRange">v2ray.core.common.net.PortRange</a></td>
+                  <td></td>
+                  <td><p>PortRange specifies the ports which the Receiver should listen on. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>listen</td>
+                  <td><a href="/common/net/index.html#v2ray.core.common.net.IPOrDomain">v2ray.core.common.net.IPOrDomain</a></td>
+                  <td></td>
+                  <td><p>Listen specifies the IP address that the Receiver should listen on. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>allocation_strategy</td>
+                  <td><a href="#v2ray.core.app.proxyman.AllocationStrategy">AllocationStrategy</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>stream_settings</td>
+                  <td><a href="/transport/internet/index.html#v2ray.core.transport.internet.StreamConfig">v2ray.core.transport.internet.StreamConfig</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>receive_original_destination</td>
+                  <td><a href="#bool">bool</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>domain_override</td>
+                  <td><a href="#v2ray.core.app.proxyman.KnownProtocols">KnownProtocols</a></td>
+                  <td>repeated</td>
+                  <td><p>Override domains for the given protocol.
+Deprecated. Use sniffing_settings. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>sniffing_settings</td>
+                  <td><a href="#v2ray.core.app.proxyman.SniffingConfig">SniffingConfig</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+            
+            
+            <h4>Fields with deprecated option</h4>
+            <table>
+              <thead>
+                <tr>
+                  <td>Name</td>
+                  <td>Option</td>
+                </tr>
+              </thead>
+              <tbody>
+              
+                <tr>
+                  <td>domain_override</td>
+                  <td><p>true</p></td>
+                </tr>
+              
+              </tbody>
+            </table>
+            
+          
+
+        
+      
+      
+        <h3 id="v2ray.core.app.proxyman.SenderConfig">SenderConfig</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>via</td>
+                  <td><a href="/common/net/index.html#v2ray.core.common.net.IPOrDomain">v2ray.core.common.net.IPOrDomain</a></td>
+                  <td></td>
+                  <td><p>Send traffic through the given IP. Only IP is allowed. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>stream_settings</td>
+                  <td><a href="/transport/internet/index.html#v2ray.core.transport.internet.StreamConfig">v2ray.core.transport.internet.StreamConfig</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>proxy_settings</td>
+                  <td><a href="/transport/internet/index.html#v2ray.core.transport.internet.ProxyConfig">v2ray.core.transport.internet.ProxyConfig</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>multiplex_settings</td>
+                  <td><a href="#v2ray.core.app.proxyman.MultiplexingConfig">MultiplexingConfig</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+      
+        <h3 id="v2ray.core.app.proxyman.SniffingConfig">SniffingConfig</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>enabled</td>
+                  <td><a href="#bool">bool</a></td>
+                  <td></td>
+                  <td><p>Whether or not to enable content sniffing on an inbound connection. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>destination_override</td>
+                  <td><a href="#string">string</a></td>
+                  <td>repeated</td>
+                  <td><p>Override target destination if sniff&#39;ed protocol is in the given list.
+Supported values are &#34;http&#34;, &#34;tls&#34;, &#34;fakedns&#34;. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>metadata_only</td>
+                  <td><a href="#bool">bool</a></td>
+                  <td></td>
+                  <td><p>Whether should only try to sniff metadata without waiting for client input.
+Can be used to support SMTP like protocol where server send the first message. </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+
+      
+        <h3 id="v2ray.core.app.proxyman.AllocationStrategy.Type">AllocationStrategy.Type</h3>
+        <p></p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Name</td><td>Number</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td>Always</td>
+                <td>0</td>
+                <td><p>Always allocate all connection handlers.</p></td>
+              </tr>
+            
+              <tr>
+                <td>Random</td>
+                <td>1</td>
+                <td><p>Randomly allocate specific range of handlers.</p></td>
+              </tr>
+            
+              <tr>
+                <td>External</td>
+                <td>2</td>
+                <td><p>External. Not supported yet.</p></td>
+              </tr>
+            
+          </tbody>
+        </table>
+      
+        <h3 id="v2ray.core.app.proxyman.KnownProtocols">KnownProtocols</h3>
+        <p></p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Name</td><td>Number</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td>HTTP</td>
+                <td>0</td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>TLS</td>
+                <td>1</td>
+                <td><p></p></td>
+              </tr>
+            
+          </tbody>
+        </table>
+      
+
+      
+
+      
+    
+  </body>
+</html>
+
