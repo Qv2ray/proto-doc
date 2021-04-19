@@ -160,7 +160,6 @@
   </head>
 
   <body>
-    
     <h1 id="title">Package <code>v2ray.core.app.router.command</code></h1>
     <p>Provided by:</p>
     
@@ -177,7 +176,7 @@
         <div class="field-table">
           <h3>Dependencies</h3>
           
-            <p><a href="///common/net/index.html">/common/net</a></p>
+            <p><a href="/common/net/index.html">common/net</a></p>
           
         </div>
       
@@ -224,7 +223,7 @@
 
       
       
-        <h3 id="v2ray.core.app.router.command.Config">Config</h3>
+        <h4 id="v2ray.core.app.router.command.Config">Config</h4>
         <p></p>
 
         
@@ -232,7 +231,7 @@
         
       
       
-        <h3 id="v2ray.core.app.router.command.RoutingContext">RoutingContext</h3>
+        <h4 id="v2ray.core.app.router.command.RoutingContext">RoutingContext</h4>
         <p>RoutingContext is the context with information relative to routing process.</p><p>It conforms to the structure of v2ray.core.features.routing.Context and</p><p>v2ray.core.features.routing.Route.</p>
 
         
@@ -334,7 +333,7 @@
         
       
       
-        <h3 id="v2ray.core.app.router.command.RoutingContext.AttributesEntry">RoutingContext.AttributesEntry</h3>
+        <h4 id="v2ray.core.app.router.command.RoutingContext.AttributesEntry">RoutingContext.AttributesEntry</h4>
         <p></p>
 
         
@@ -366,7 +365,7 @@
         
       
       
-        <h3 id="v2ray.core.app.router.command.SubscribeRoutingStatsRequest">SubscribeRoutingStatsRequest</h3>
+        <h4 id="v2ray.core.app.router.command.SubscribeRoutingStatsRequest">SubscribeRoutingStatsRequest</h4>
         <p>SubscribeRoutingStatsRequest subscribes to routing statistics channel if</p><p>opened by v2ray-core.</p><p>* FieldSelectors selects a subset of fields in routing statistics to return.</p><p>Valid selectors:</p><p>- inbound: Selects connection's inbound tag.</p><p>- network: Selects connection's network.</p><p>- ip: Equivalent as "ip_source" and "ip_target", selects both source and</p><p>target IP.</p><p>- port: Equivalent as "port_source" and "port_target", selects both source</p><p>and target port.</p><p>- domain: Selects target domain.</p><p>- protocol: Select connection's protocol.</p><p>- user: Select connection's inbound user email.</p><p>- attributes: Select connection's additional attributes.</p><p>- outbound: Equivalent as "outbound" and "outbound_group", select both</p><p>outbound tag and outbound group tags.</p><p>* If FieldSelectors is left empty, all fields will be returned.</p>
 
         
@@ -391,7 +390,7 @@
         
       
       
-        <h3 id="v2ray.core.app.router.command.TestRouteRequest">TestRouteRequest</h3>
+        <h4 id="v2ray.core.app.router.command.TestRouteRequest">TestRouteRequest</h4>
         <p>TestRouteRequest manually tests a routing result according to the routing</p><p>context message.</p><p>* RoutingContext is the routing message without outbound information.</p><p>* FieldSelectors selects the fields to return in the routing result. All</p><p>fields are returned if left empty.</p><p>* PublishResult broadcasts the routing result to routing statistics channel</p><p>if set true.</p>
 
         
@@ -435,7 +434,7 @@
       
 
       
-        <h3 id="v2ray.core.app.router.command.RoutingService">RoutingService</h3>
+        <h4 id="v2ray.core.app.router.command.RoutingService">RoutingService</h4>
         <p></p>
         <table class="enum-table">
           <thead>
