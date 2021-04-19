@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>V2Ray proto documentations</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Ubuntu:400,700,400italic"/>
+    <style>
+      body {
+        width: 60em;
+        margin: 1em auto;
+        color: #222;
+        font-family: "Ubuntu", sans-serif;
+        padding-bottom: 4em;
+      }
+
+      h1 {
+        font-weight: normal;
+        border-bottom: 1px solid #aaa; 
+      }
+
+      h2 {
+        border-bottom: 1px solid #aaa; 
+        margin: 1.5em 0;
+        margin-bottom: 0.5em;
+      }
+
+      h3 {
+        font-weight: normal;
+        border-bottom: 1px solid #aaa; 
+      }
+
+      a {
+        text-decoration: none;
+        color: #567e25;
+      }
+
+      table {
+        width: 100%;
+        font-size: 80%;
+        border-collapse: collapse;
+      }
+
+      thead {
+        font-weight: 700;
+        background-color: #dcdcdc;
+      }
+
+      tbody tr:nth-child(even) {
+        background-color: #fbfbfb;
+      }
+
+      td {
+        border: 1px solid #ccc;
+        padding: 0.5ex 2ex;
+      }
+
+      td p {
+        text-indent: 1em;
+        margin: 0;
+      }
+
+      td p:nth-child(1) {
+        text-indent: 0;  
+      }
+
+       
+      .field-table td:nth-child(1) {  
+        width: 10em;
+      }
+      .field-table td:nth-child(2) {  
+        width: 10em;
+      }
+      .field-table td:nth-child(3) {  
+        width: 6em;
+      }
+      .field-table td:nth-child(4) {  
+        width: auto;
+      }
+
+       
+      .extension-table td:nth-child(1) {  
+        width: 10em;
+      }
+      .extension-table td:nth-child(2) {  
+        width: 10em;
+      }
+      .extension-table td:nth-child(3) {  
+        width: 10em;
+      }
+      .extension-table td:nth-child(4) {  
+        width: 5em;
+      }
+      .extension-table td:nth-child(5) {  
+        width: auto;
+      }
+
+       
+      .enum-table td:nth-child(1) {  
+        width: 10em;
+      }
+      .enum-table td:nth-child(2) {  
+        width: 10em;
+      }
+      .enum-table td:nth-child(3) {  
+        width: auto;
+      }
+
+       
+      .scalar-value-types-table tr {
+        height: 3em;
+      }
+
+       
+      #toc-container ul {
+        list-style-type: none;
+        padding-left: 1em;
+        line-height: 180%;
+        margin: 0;
+      }
+      #toc > li > a {
+        font-weight: bold;
+      }
+
+       
+      .file-heading {
+        width: 100%;
+        display: table;
+        border-bottom: 1px solid #aaa;
+        margin: 4em 0 1.5em 0;
+      }
+      .file-heading h2 {
+        border: none;
+        display: table-cell;
+      }
+      .file-heading a {
+        text-align: right;
+        display: table-cell;
+      }
+
+       
+      .badge {
+        width: 1.6em;
+        height: 1.6em;
+        display: inline-block;
+
+        line-height: 1.6em;
+        text-align: center;
+        font-weight: bold;
+        font-size: 60%;
+
+        color: #89ba48;
+        background-color: #dff0c8;
+
+        margin: 0.5ex 1em 0.5ex -1em;
+        border: 1px solid #fbfbfb;
+        border-radius: 1ex;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1 id="title">Package <code>v2ray.core</code></h1>
+    <p>Provided by:</p>
+    
+      <ul id="toc">
+        <li><a href="#file_config.proto">config.proto</a></li>
+      </ul>
+    
+    
+      <div class="file-heading">
+        <h2 id="file_config.proto">config.proto</h2><a href="#title">Top</a>
+      </div>
+
+      
+        <div class="field-table">
+          <h3>Dependencies</h3>
+          
+            <p><a href="/transport/index.html">transport</a></p>
+          
+            <p><a href="/common/serial/index.html">common/serial</a></p>
+          
+        </div>
+      
+
+      <div id="toc-container">
+        <h3>Contents</h3>
+        <ul id="toc">
+          
+          <li>  
+              
+                <li>
+                  <a href="#v2ray.core.Config"><span class="badge">M</span>Config</a>
+                </li>
+              
+                <li>
+                  <a href="#v2ray.core.InboundHandlerConfig"><span class="badge">M</span>InboundHandlerConfig</a>
+                </li>
+              
+                <li>
+                  <a href="#v2ray.core.OutboundHandlerConfig"><span class="badge">M</span>OutboundHandlerConfig</a>
+                </li>
+              
+              
+              
+               
+          </li> 
+        </ul>
+      </div>
+
+      
+      <p></p>
+
+      
+      
+        <h4 id="v2ray.core.Config">Config</h4>
+        <p>Config is the master config of V2Ray. V2Ray takes this config as input and</p><p>functions accordingly.</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>inbound</td>
+                  <td><a href="#v2ray.core.InboundHandlerConfig">InboundHandlerConfig</a></td>
+                  <td>repeated</td>
+                  <td><p>Inbound handler configurations. Must have at least one item. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>outbound</td>
+                  <td><a href="#v2ray.core.OutboundHandlerConfig">OutboundHandlerConfig</a></td>
+                  <td>repeated</td>
+                  <td><p>Outbound handler configurations. Must have at least one item. The first
+item is used as default for routing. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>app</td>
+                  <td><a href="common/serial/index.html#v2ray.core.common.serial.TypedMessage">common.serial.TypedMessage</a></td>
+                  <td>repeated</td>
+                  <td><p>App is for configurations of all features in V2Ray. A feature must
+implement the Feature interface, and its config type must be registered
+through common.RegisterConfig. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>transport</td>
+                  <td><a href="transport/index.html#v2ray.core.transport.Config">transport.Config</a></td>
+                  <td></td>
+                  <td><p><strong>Deprecated.</strong> Transport settings.
+Deprecated. Each inbound and outbound should choose their own transport
+config. Date to remove: 2020-01-13 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>extension</td>
+                  <td><a href="common/serial/index.html#v2ray.core.common.serial.TypedMessage">common.serial.TypedMessage</a></td>
+                  <td>repeated</td>
+                  <td><p>Configuration for extensions. The config may not work if corresponding
+extension is not loaded into V2Ray. V2Ray will ignore such config during
+initialization. </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+            
+            
+            <h4>Fields with deprecated option</h4>
+            <table>
+              <thead>
+                <tr>
+                  <td>Name</td>
+                  <td>Option</td>
+                </tr>
+              </thead>
+              <tbody>
+              
+                <tr>
+                  <td>transport</td>
+                  <td><p>true</p></td>
+                </tr>
+              
+              </tbody>
+            </table>
+            
+          
+
+        
+      
+      
+        <h4 id="v2ray.core.InboundHandlerConfig">InboundHandlerConfig</h4>
+        <p>InboundHandlerConfig is the configuration for inbound handler.</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>tag</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>Tag of the inbound handler. The tag must be unique among all inbound
+handlers </p></td>
+                </tr>
+              
+                <tr>
+                  <td>receiver_settings</td>
+                  <td><a href="common/serial/index.html#v2ray.core.common.serial.TypedMessage">common.serial.TypedMessage</a></td>
+                  <td></td>
+                  <td><p>Settings for how this inbound proxy is handled. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>proxy_settings</td>
+                  <td><a href="common/serial/index.html#v2ray.core.common.serial.TypedMessage">common.serial.TypedMessage</a></td>
+                  <td></td>
+                  <td><p>Settings for inbound proxy. Must be one of the inbound proxies. </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+      
+        <h4 id="v2ray.core.OutboundHandlerConfig">OutboundHandlerConfig</h4>
+        <p>OutboundHandlerConfig is the configuration for outbound handler.</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>tag</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>Tag of this outbound handler. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>sender_settings</td>
+                  <td><a href="common/serial/index.html#v2ray.core.common.serial.TypedMessage">common.serial.TypedMessage</a></td>
+                  <td></td>
+                  <td><p>Settings for how to dial connection for this outbound handler. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>proxy_settings</td>
+                  <td><a href="common/serial/index.html#v2ray.core.common.serial.TypedMessage">common.serial.TypedMessage</a></td>
+                  <td></td>
+                  <td><p>Settings for this outbound proxy. Must be one of the outbound proxies. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>expire</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p>If not zero, this outbound will be expired in seconds. Not used for now. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>comment</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>Comment of this outbound handler. Not used for now. </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+
+      
+
+      
+
+      
+    
+  </body>
+</html>
+
