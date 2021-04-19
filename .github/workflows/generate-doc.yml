@@ -18,7 +18,7 @@ jobs:
       - run: sudo apt install -y protobuf-compiler
       - name: Generate
         run: |
-          export PROTOC_GEN_DOC_PAGE_ROOT="proto-doc"
+          export PROTOC_GEN_DOC_PAGE_ROOT=""
           git clone https://github.com/Qv2ray/protoc-gen-doc
           cd protoc-gen-doc
           make build
