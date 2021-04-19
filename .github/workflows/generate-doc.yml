@@ -31,7 +31,7 @@ jobs:
           protoc --doc_out=docs --doc_opt=html,index.html,source_relative $(find . -name '*.proto')
           cd docs/
           mv ./index.html ./main.html
-          python $CDIR/proto-doc/generate.py > index.html
+          python $CDIR/generate.py > index.html
       - name: GitHub Pages
         uses: JamesIves/github-pages-deploy-action@4.0.0
         with:
