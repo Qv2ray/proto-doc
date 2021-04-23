@@ -164,101 +164,21 @@
     <p>Provided by:</p>
     
       <ul id="toc">
-        <li><a href="#file_common%2fnet%2fdestination.proto">common/net/destination.proto</a></li>
-      </ul>
-    
-      <ul id="toc">
         <li><a href="#file_common%2fnet%2fnetwork.proto">common/net/network.proto</a></li>
-      </ul>
-    
-      <ul id="toc">
-        <li><a href="#file_common%2fnet%2faddress.proto">common/net/address.proto</a></li>
       </ul>
     
       <ul id="toc">
         <li><a href="#file_common%2fnet%2fport.proto">common/net/port.proto</a></li>
       </ul>
     
+      <ul id="toc">
+        <li><a href="#file_common%2fnet%2fdestination.proto">common/net/destination.proto</a></li>
+      </ul>
     
-      <div class="file-heading">
-        <h2 id="file_common/net/destination.proto">common/net/destination.proto</h2><a href="#title">Top</a>
-      </div>
-
-      
-        <div class="field-table">
-          <h3>Dependencies</h3>
-          
-            <p><a href="/common/net/index.html">common/net</a></p>
-          
-        </div>
-      
-
-      <div id="toc-container">
-        <h3>Contents</h3>
-        <ul id="toc">
-          
-          <li>  
-              
-                <li>
-                  <a href="#v2ray.core.common.net.Endpoint"><span class="badge">M</span>Endpoint</a>
-                </li>
-              
-              
-              
-               
-          </li> 
-        </ul>
-      </div>
-
-      
-      <p></p>
-
-      
-      
-        <h4 id="v2ray.core.common.net.Endpoint">Endpoint</h4>
-        <p>Endpoint of a network connection.</p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>network</td>
-                  <td><a href="#v2ray.core.common.net.Network">Network</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>address</td>
-                  <td><a href="#v2ray.core.common.net.IPOrDomain">IPOrDomain</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>port</td>
-                  <td><a href="#uint32">uint32</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-
-          
-
-        
-      
-
-      
-
-      
-
-      
+      <ul id="toc">
+        <li><a href="#file_common%2fnet%2faddress.proto">common/net/address.proto</a></li>
+      </ul>
+    
     
       <div class="file-heading">
         <h2 id="file_common/net/network.proto">common/net/network.proto</h2><a href="#title">Top</a>
@@ -365,72 +285,6 @@
       
     
       <div class="file-heading">
-        <h2 id="file_common/net/address.proto">common/net/address.proto</h2><a href="#title">Top</a>
-      </div>
-
-      
-
-      <div id="toc-container">
-        <h3>Contents</h3>
-        <ul id="toc">
-          
-          <li>  
-              
-                <li>
-                  <a href="#v2ray.core.common.net.IPOrDomain"><span class="badge">M</span>IPOrDomain</a>
-                </li>
-              
-              
-              
-               
-          </li> 
-        </ul>
-      </div>
-
-      
-      <p></p>
-
-      
-      
-        <h4 id="v2ray.core.common.net.IPOrDomain">IPOrDomain</h4>
-        <p>Address of a network host. It may be either an IP address or a domain</p><p>address.</p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>ip</td>
-                  <td><a href="#bytes">bytes</a></td>
-                  <td></td>
-                  <td><p>IP address. Must by either 4 or 16 bytes. </p></td>
-                </tr>
-              
-                <tr>
-                  <td>domain</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p>Domain address. </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-
-          
-
-        
-      
-
-      
-
-      
-
-      
-    
-      <div class="file-heading">
         <h2 id="file_common/net/port.proto">common/net/port.proto</h2><a href="#title">Top</a>
       </div>
 
@@ -509,6 +363,152 @@
                   <td><a href="#uint32">uint32</a></td>
                   <td></td>
                   <td><p>The port that this range ends with (inclusive). </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+
+      
+
+      
+
+      
+    
+      <div class="file-heading">
+        <h2 id="file_common/net/destination.proto">common/net/destination.proto</h2><a href="#title">Top</a>
+      </div>
+
+      
+        <div class="field-table">
+          <h3>Dependencies</h3>
+          
+            <p><a href="/common/net/index.html">common/net</a></p>
+          
+        </div>
+      
+
+      <div id="toc-container">
+        <h3>Contents</h3>
+        <ul id="toc">
+          
+          <li>  
+              
+                <li>
+                  <a href="#v2ray.core.common.net.Endpoint"><span class="badge">M</span>Endpoint</a>
+                </li>
+              
+              
+              
+               
+          </li> 
+        </ul>
+      </div>
+
+      
+      <p></p>
+
+      
+      
+        <h4 id="v2ray.core.common.net.Endpoint">Endpoint</h4>
+        <p>Endpoint of a network connection.</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>network</td>
+                  <td><a href="#v2ray.core.common.net.Network">Network</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>address</td>
+                  <td><a href="#v2ray.core.common.net.IPOrDomain">IPOrDomain</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>port</td>
+                  <td><a href="#uint32">uint32</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+
+      
+
+      
+
+      
+    
+      <div class="file-heading">
+        <h2 id="file_common/net/address.proto">common/net/address.proto</h2><a href="#title">Top</a>
+      </div>
+
+      
+
+      <div id="toc-container">
+        <h3>Contents</h3>
+        <ul id="toc">
+          
+          <li>  
+              
+                <li>
+                  <a href="#v2ray.core.common.net.IPOrDomain"><span class="badge">M</span>IPOrDomain</a>
+                </li>
+              
+              
+              
+               
+          </li> 
+        </ul>
+      </div>
+
+      
+      <p></p>
+
+      
+      
+        <h4 id="v2ray.core.common.net.IPOrDomain">IPOrDomain</h4>
+        <p>Address of a network host. It may be either an IP address or a domain</p><p>address.</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>ip</td>
+                  <td><a href="#bytes">bytes</a></td>
+                  <td></td>
+                  <td><p>IP address. Must by either 4 or 16 bytes. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>domain</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>Domain address. </p></td>
                 </tr>
               
             </tbody>

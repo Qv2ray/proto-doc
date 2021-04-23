@@ -164,17 +164,98 @@
     <p>Provided by:</p>
     
       <ul id="toc">
-        <li><a href="#file_common%2fprotocol%2fserver_spec.proto">common/protocol/server_spec.proto</a></li>
+        <li><a href="#file_common%2fprotocol%2fuser.proto">common/protocol/user.proto</a></li>
       </ul>
     
       <ul id="toc">
-        <li><a href="#file_common%2fprotocol%2fuser.proto">common/protocol/user.proto</a></li>
+        <li><a href="#file_common%2fprotocol%2fserver_spec.proto">common/protocol/server_spec.proto</a></li>
       </ul>
     
       <ul id="toc">
         <li><a href="#file_common%2fprotocol%2fheaders.proto">common/protocol/headers.proto</a></li>
       </ul>
     
+    
+      <div class="file-heading">
+        <h2 id="file_common/protocol/user.proto">common/protocol/user.proto</h2><a href="#title">Top</a>
+      </div>
+
+      
+        <div class="field-table">
+          <h3>Dependencies</h3>
+          
+            <p><a href="/common/serial/index.html">common/serial</a></p>
+          
+        </div>
+      
+
+      <div id="toc-container">
+        <h3>Contents</h3>
+        <ul id="toc">
+          
+          <li>  
+              
+                <li>
+                  <a href="#v2ray.core.common.protocol.User"><span class="badge">M</span>User</a>
+                </li>
+              
+              
+              
+               
+          </li> 
+        </ul>
+      </div>
+
+      
+      <p></p>
+
+      
+      
+        <h4 id="v2ray.core.common.protocol.User">User</h4>
+        <p>User is a generic user for all procotols.</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>level</td>
+                  <td><a href="#uint32">uint32</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>email</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>account</td>
+                  <td><a href="/common/serial/index.html#v2ray.core.common.serial.TypedMessage">v2ray.core.common.serial.TypedMessage</a></td>
+                  <td></td>
+                  <td><p>Protocol specific account information. Must be the account proto in one of
+the proxies. </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+
+      
+
+      
+
+      
     
       <div class="file-heading">
         <h2 id="file_common/protocol/server_spec.proto">common/protocol/server_spec.proto</h2><a href="#title">Top</a>
@@ -242,87 +323,6 @@
                   <td><a href="#v2ray.core.common.protocol.User">User</a></td>
                   <td>repeated</td>
                   <td><p> </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-
-          
-
-        
-      
-
-      
-
-      
-
-      
-    
-      <div class="file-heading">
-        <h2 id="file_common/protocol/user.proto">common/protocol/user.proto</h2><a href="#title">Top</a>
-      </div>
-
-      
-        <div class="field-table">
-          <h3>Dependencies</h3>
-          
-            <p><a href="/common/serial/index.html">common/serial</a></p>
-          
-        </div>
-      
-
-      <div id="toc-container">
-        <h3>Contents</h3>
-        <ul id="toc">
-          
-          <li>  
-              
-                <li>
-                  <a href="#v2ray.core.common.protocol.User"><span class="badge">M</span>User</a>
-                </li>
-              
-              
-              
-               
-          </li> 
-        </ul>
-      </div>
-
-      
-      <p></p>
-
-      
-      
-        <h4 id="v2ray.core.common.protocol.User">User</h4>
-        <p>User is a generic user for all procotols.</p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>level</td>
-                  <td><a href="#uint32">uint32</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>email</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>account</td>
-                  <td><a href="/common/serial/index.html#v2ray.core.common.serial.TypedMessage">v2ray.core.common.serial.TypedMessage</a></td>
-                  <td></td>
-                  <td><p>Protocol specific account information. Must be the account proto in one of
-the proxies. </p></td>
                 </tr>
               
             </tbody>

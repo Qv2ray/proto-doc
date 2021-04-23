@@ -15,6 +15,66 @@
 <body class"container" style="overflow-x: hidden; overflow-y: hidden">
 <div class="left-half">
 <li><button onClick="document.getElementById('frame').src = '/main.html';">V2Ray Root</button></li>
+  <h2>transport</h2>
+<ul>
+    <li><button onClick="document.getElementById('frame').src = '/transport/internet';">internet</button></li>
+  <ul>
+      <li><button onClick="document.getElementById('frame').src = '/transport/internet/tls';">tls</button></li>
+    <ul>
+    </ul>
+      <li><button onClick="document.getElementById('frame').src = '/transport/internet/websocket';">websocket</button></li>
+    <ul>
+    </ul>
+      <li><button onClick="document.getElementById('frame').src = '/transport/internet/udp';">udp</button></li>
+    <ul>
+    </ul>
+      <li><button onClick="document.getElementById('frame').src = '/transport/internet/kcp';">kcp</button></li>
+    <ul>
+    </ul>
+      <li><button onClick="document.getElementById('frame').src = '/transport/internet/headers';">headers</button></li>
+    <ul>
+        <li><button onClick="document.getElementById('frame').src = '/transport/internet/headers/tls';">tls</button></li>
+      <ul>
+      </ul>
+        <li><button onClick="document.getElementById('frame').src = '/transport/internet/headers/srtp';">srtp</button></li>
+      <ul>
+      </ul>
+        <li><button onClick="document.getElementById('frame').src = '/transport/internet/headers/noop';">noop</button></li>
+      <ul>
+      </ul>
+        <li><button onClick="document.getElementById('frame').src = '/transport/internet/headers/utp';">utp</button></li>
+      <ul>
+      </ul>
+        <li><button onClick="document.getElementById('frame').src = '/transport/internet/headers/wechat';">wechat</button></li>
+      <ul>
+      </ul>
+        <li><button onClick="document.getElementById('frame').src = '/transport/internet/headers/http';">http</button></li>
+      <ul>
+      </ul>
+        <li><button onClick="document.getElementById('frame').src = '/transport/internet/headers/wireguard';">wireguard</button></li>
+      <ul>
+      </ul>
+    </ul>
+      <li><button onClick="document.getElementById('frame').src = '/transport/internet/tcp';">tcp</button></li>
+    <ul>
+    </ul>
+      <li><button onClick="document.getElementById('frame').src = '/transport/internet/http';">http</button></li>
+    <ul>
+    </ul>
+      <li><button onClick="document.getElementById('frame').src = '/transport/internet/grpc';">grpc</button></li>
+    <ul>
+        <li><button onClick="document.getElementById('frame').src = '/transport/internet/grpc/encoding';">encoding</button></li>
+      <ul>
+      </ul>
+    </ul>
+      <li><button onClick="document.getElementById('frame').src = '/transport/internet/domainsocket';">domainsocket</button></li>
+    <ul>
+    </ul>
+      <li><button onClick="document.getElementById('frame').src = '/transport/internet/quic';">quic</button></li>
+    <ul>
+    </ul>
+  </ul>
+</ul>
   <h2>app</h2>
 <ul>
     <li><button onClick="document.getElementById('frame').src = '/app/stats';">stats</button></li>
@@ -23,25 +83,25 @@
     <ul>
     </ul>
   </ul>
+    <li><button onClick="document.getElementById('frame').src = '/app/policy';">policy</button></li>
+  <ul>
+  </ul>
     <li><button onClick="document.getElementById('frame').src = '/app/commander';">commander</button></li>
   <ul>
-  </ul>
-    <li><button onClick="document.getElementById('frame').src = '/app/dns';">dns</button></li>
-  <ul>
-      <li><button onClick="document.getElementById('frame').src = '/app/dns/fakedns';">fakedns</button></li>
-    <ul>
-    </ul>
-  </ul>
-    <li><button onClick="document.getElementById('frame').src = '/app/router';">router</button></li>
-  <ul>
-      <li><button onClick="document.getElementById('frame').src = '/app/router/command';">command</button></li>
-    <ul>
-    </ul>
   </ul>
     <li><button onClick="document.getElementById('frame').src = '/app/browserforwarder';">browserforwarder</button></li>
   <ul>
   </ul>
-    <li><button onClick="document.getElementById('frame').src = '/app/policy';">policy</button></li>
+    <li><button onClick="document.getElementById('frame').src = '/app/observatory';">observatory</button></li>
+  <ul>
+      <li><button onClick="document.getElementById('frame').src = '/app/observatory/command';">command</button></li>
+    <ul>
+    </ul>
+  </ul>
+    <li><button onClick="document.getElementById('frame').src = '/app/dispatcher';">dispatcher</button></li>
+  <ul>
+  </ul>
+    <li><button onClick="document.getElementById('frame').src = '/app/reverse';">reverse</button></li>
   <ul>
   </ul>
     <li><button onClick="document.getElementById('frame').src = '/app/log';">log</button></li>
@@ -56,101 +116,56 @@
     <ul>
     </ul>
   </ul>
-    <li><button onClick="document.getElementById('frame').src = '/app/observatory';">observatory</button></li>
+    <li><button onClick="document.getElementById('frame').src = '/app/router';">router</button></li>
   <ul>
-      <li><button onClick="document.getElementById('frame').src = '/app/observatory/command';">command</button></li>
+      <li><button onClick="document.getElementById('frame').src = '/app/router/command';">command</button></li>
     <ul>
     </ul>
   </ul>
-    <li><button onClick="document.getElementById('frame').src = '/app/dispatcher';">dispatcher</button></li>
+    <li><button onClick="document.getElementById('frame').src = '/app/dns';">dns</button></li>
   <ul>
-  </ul>
-    <li><button onClick="document.getElementById('frame').src = '/app/reverse';">reverse</button></li>
-  <ul>
-  </ul>
-</ul>
-  <h2>transport</h2>
-<ul>
-    <li><button onClick="document.getElementById('frame').src = '/transport/internet';">internet</button></li>
-  <ul>
-      <li><button onClick="document.getElementById('frame').src = '/transport/internet/domainsocket';">domainsocket</button></li>
-    <ul>
-    </ul>
-      <li><button onClick="document.getElementById('frame').src = '/transport/internet/kcp';">kcp</button></li>
-    <ul>
-    </ul>
-      <li><button onClick="document.getElementById('frame').src = '/transport/internet/tcp';">tcp</button></li>
-    <ul>
-    </ul>
-      <li><button onClick="document.getElementById('frame').src = '/transport/internet/grpc';">grpc</button></li>
-    <ul>
-        <li><button onClick="document.getElementById('frame').src = '/transport/internet/grpc/encoding';">encoding</button></li>
-      <ul>
-      </ul>
-    </ul>
-      <li><button onClick="document.getElementById('frame').src = '/transport/internet/udp';">udp</button></li>
-    <ul>
-    </ul>
-      <li><button onClick="document.getElementById('frame').src = '/transport/internet/headers';">headers</button></li>
-    <ul>
-        <li><button onClick="document.getElementById('frame').src = '/transport/internet/headers/wechat';">wechat</button></li>
-      <ul>
-      </ul>
-        <li><button onClick="document.getElementById('frame').src = '/transport/internet/headers/wireguard';">wireguard</button></li>
-      <ul>
-      </ul>
-        <li><button onClick="document.getElementById('frame').src = '/transport/internet/headers/utp';">utp</button></li>
-      <ul>
-      </ul>
-        <li><button onClick="document.getElementById('frame').src = '/transport/internet/headers/tls';">tls</button></li>
-      <ul>
-      </ul>
-        <li><button onClick="document.getElementById('frame').src = '/transport/internet/headers/srtp';">srtp</button></li>
-      <ul>
-      </ul>
-        <li><button onClick="document.getElementById('frame').src = '/transport/internet/headers/noop';">noop</button></li>
-      <ul>
-      </ul>
-        <li><button onClick="document.getElementById('frame').src = '/transport/internet/headers/http';">http</button></li>
-      <ul>
-      </ul>
-    </ul>
-      <li><button onClick="document.getElementById('frame').src = '/transport/internet/quic';">quic</button></li>
-    <ul>
-    </ul>
-      <li><button onClick="document.getElementById('frame').src = '/transport/internet/tls';">tls</button></li>
-    <ul>
-    </ul>
-      <li><button onClick="document.getElementById('frame').src = '/transport/internet/websocket';">websocket</button></li>
-    <ul>
-    </ul>
-      <li><button onClick="document.getElementById('frame').src = '/transport/internet/http';">http</button></li>
+      <li><button onClick="document.getElementById('frame').src = '/app/dns/fakedns';">fakedns</button></li>
     <ul>
     </ul>
   </ul>
 </ul>
   <h2>common</h2>
 <ul>
-    <li><button onClick="document.getElementById('frame').src = '/common/net';">net</button></li>
-  <ul>
-  </ul>
     <li><button onClick="document.getElementById('frame').src = '/common/protocol';">protocol</button></li>
-  <ul>
-  </ul>
-    <li><button onClick="document.getElementById('frame').src = '/common/log';">log</button></li>
   <ul>
   </ul>
     <li><button onClick="document.getElementById('frame').src = '/common/serial';">serial</button></li>
   <ul>
   </ul>
+    <li><button onClick="document.getElementById('frame').src = '/common/log';">log</button></li>
+  <ul>
+  </ul>
+    <li><button onClick="document.getElementById('frame').src = '/common/net';">net</button></li>
+  <ul>
+  </ul>
 </ul>
   <h2>proxy</h2>
 <ul>
+    <li><button onClick="document.getElementById('frame').src = '/proxy/loopback';">loopback</button></li>
+  <ul>
+  </ul>
     <li><button onClick="document.getElementById('frame').src = '/proxy/shadowsocks';">shadowsocks</button></li>
   <ul>
   </ul>
-    <li><button onClick="document.getElementById('frame').src = '/proxy/dokodemo';">dokodemo</button></li>
+    <li><button onClick="document.getElementById('frame').src = '/proxy/blackhole';">blackhole</button></li>
   <ul>
+  </ul>
+    <li><button onClick="document.getElementById('frame').src = '/proxy/vless';">vless</button></li>
+  <ul>
+      <li><button onClick="document.getElementById('frame').src = '/proxy/vless/inbound';">inbound</button></li>
+    <ul>
+    </ul>
+      <li><button onClick="document.getElementById('frame').src = '/proxy/vless/outbound';">outbound</button></li>
+    <ul>
+    </ul>
+      <li><button onClick="document.getElementById('frame').src = '/proxy/vless/encoding';">encoding</button></li>
+    <ul>
+    </ul>
   </ul>
     <li><button onClick="document.getElementById('frame').src = '/proxy/vmess';">vmess</button></li>
   <ul>
@@ -161,40 +176,25 @@
     <ul>
     </ul>
   </ul>
+    <li><button onClick="document.getElementById('frame').src = '/proxy/socks';">socks</button></li>
+  <ul>
+  </ul>
     <li><button onClick="document.getElementById('frame').src = '/proxy/freedom';">freedom</button></li>
   <ul>
   </ul>
     <li><button onClick="document.getElementById('frame').src = '/proxy/dns';">dns</button></li>
   <ul>
   </ul>
-    <li><button onClick="document.getElementById('frame').src = '/proxy/loopback';">loopback</button></li>
+    <li><button onClick="document.getElementById('frame').src = '/proxy/http';">http</button></li>
+  <ul>
+  </ul>
+    <li><button onClick="document.getElementById('frame').src = '/proxy/dokodemo';">dokodemo</button></li>
   <ul>
   </ul>
     <li><button onClick="document.getElementById('frame').src = '/proxy/trojan';">trojan</button></li>
   <ul>
   </ul>
-    <li><button onClick="document.getElementById('frame').src = '/proxy/blackhole';">blackhole</button></li>
-  <ul>
-  </ul>
-    <li><button onClick="document.getElementById('frame').src = '/proxy/vless';">vless</button></li>
-  <ul>
-      <li><button onClick="document.getElementById('frame').src = '/proxy/vless/encoding';">encoding</button></li>
-    <ul>
-    </ul>
-      <li><button onClick="document.getElementById('frame').src = '/proxy/vless/inbound';">inbound</button></li>
-    <ul>
-    </ul>
-      <li><button onClick="document.getElementById('frame').src = '/proxy/vless/outbound';">outbound</button></li>
-    <ul>
-    </ul>
-  </ul>
-    <li><button onClick="document.getElementById('frame').src = '/proxy/socks';">socks</button></li>
-  <ul>
-  </ul>
     <li><button onClick="document.getElementById('frame').src = '/proxy/mtproto';">mtproto</button></li>
-  <ul>
-  </ul>
-    <li><button onClick="document.getElementById('frame').src = '/proxy/http';">http</button></li>
   <ul>
   </ul>
 </ul>
